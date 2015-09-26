@@ -1,0 +1,32 @@
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.1ms)[0m  SELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'gift_to_development'
+  AND fk.table_name = 'shops'
+
+  [1m[36m (0.1ms)[0m  [1mSHOW CREATE TABLE `shops`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateShops (20150926020809)
+  [1m[35m (0.7ms)[0m  CREATE TABLE `shops` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `image_path` varchar(255), `address` varchar(255), `tel` varchar(255), `abstract` text, `store_hours` varchar(255), `category` varchar(255), `situation` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'shops' already exists: CREATE TABLE `shops` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `image_path` varchar(255), `address` varchar(255), `tel` varchar(255), `abstract` text, `store_hours` varchar(255), `category` varchar(255), `situation` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateShops (20150926020809)
+  [1m[35m (19.6ms)[0m  CREATE TABLE `shops` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `image_path` varchar(255), `address` varchar(255), `tel` varchar(255), `abstract` text, `store_hours` varchar(255), `category` varchar(255), `situation` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150926020809')
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'gift_to_development'
+  AND fk.table_name = 'shops'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `shops`

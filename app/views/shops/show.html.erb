@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shop.name %>
+</p>
+
+<p>
+  <strong>Image path:</strong>
+  <%= @shop.image_path %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shop.address %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @shop.tel %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @shop.abstract %>
+</p>
+
+<p>
+  <strong>Store hours:</strong>
+  <%= @shop.store_hours %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @shop.category %>
+</p>
+
+<p>
+  <strong>Situation:</strong>
+  <%= @shop.situation %>
+</p>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>
