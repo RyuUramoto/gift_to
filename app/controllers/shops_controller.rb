@@ -4,7 +4,12 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
-    @shops = Shop.all
+    @search = Search.new
+    if params[:category].empty?
+      @shops = Shop.all
+    else
+      @shops = @search.get_shops("%" + params[:category] + "%")
+    end
   end
 
   # GET /shops/1
