@@ -1,2 +1,11 @@
 <h1>Tops#index</h1>
 <p>Find me in app/views/tops/index.html.erb</p>
+
+<%= form_for "shop", :url => shops_path , :html => {:method => "GET"} do |f| %>
+  <%= f.label "カテゴリー" %><br>
+  <%= f.check_box :category, {multiple: true}, "food" %>
+  <%= f.label "Food" %>
+  <%= f.check_box :category, {multiple: true, name: "ring"}, "ring" %>
+  <%= f.label "Ring" %>
+  <%= f.submit %>
+<% end %>
