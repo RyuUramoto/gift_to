@@ -4,7 +4,7 @@ class Shop < ActiveRecord::Base
     @shop_ids = []
   end
 
-  def get_shops
+  def filter_category
     @param.each do |category|
       @hit_shops = Shop.where("category like ?", "%#{category}%")
       matching_shops_ids(category)

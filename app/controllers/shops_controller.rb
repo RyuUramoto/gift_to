@@ -7,7 +7,7 @@ class ShopsController < ApplicationController
     if params[:shop][:category].empty?
       redirect_to(root_path)
     else
-      @shops = @shops.get_shops
+      @shops = @shops.filter_category
     end
   end
 
