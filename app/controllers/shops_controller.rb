@@ -1,14 +1,13 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_params, only: [:index]
   # GET /shops
   # GET /shops.json
   def index
-    params[:shop][:category].delete("0")
     if params[:shop][:category].empty?
       redirect_to(root_path)
     else
-      shops = Shop.new(params[:shop][:category])
-      @shops = shops.get_shops
+      @shops = @shops.get_shops
     end
   end
 
@@ -70,6 +69,12 @@ class ShopsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_shop
     @shop = Shop.find(params[:id])
+  end
+
+  def set_params
+    params[:shop][:category].delete("0")
+    @shops = Shop.new
+    @shops.set_params(params[:shop][:category])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

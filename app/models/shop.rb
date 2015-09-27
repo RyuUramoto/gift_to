@@ -1,6 +1,5 @@
 class Shop < ActiveRecord::Base
-  def initialize(param)
-    @param = param
+  def initialize
     @shops = []
     @shop_ids = []
   end
@@ -12,6 +11,10 @@ class Shop < ActiveRecord::Base
     end
     avoid_redundant_id
     return @shops
+  end
+
+  def set_params(param)
+    @param = param
   end
 
   private
