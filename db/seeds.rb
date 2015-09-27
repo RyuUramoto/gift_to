@@ -8,7 +8,7 @@
 
 @shop = Shop.new
 @shop[:name] = "pastadeka"
-@shop[:image_path] = ""
+@shop[:image_path] = "/assets/oshare_store.jpg"
 @shop[:address] = "福岡県福岡市"
 @shop[:tel] = "0120-123-456"
 @shop[:abstract] = "概要"
@@ -19,7 +19,7 @@
 
 @shop = Shop.new
 @shop[:name] = "spicaterible"
-@shop[:image_path] = "spica"
+@shop[:image_path] = "/assets/oshare_store.jpg"
 @shop[:address] = "福岡県福岡市"
 @shop[:tel] = "0120-888-888"
 @shop[:abstract] = "スピカ概要"
@@ -30,7 +30,7 @@
 
 @shop = Shop.new
 @shop[:name] = "パックマン"
-@shop[:image_path] = ""
+@shop[:image_path] = "/assets/oshare_store.jpg"
 @shop[:address] = "福岡県宗像市"
 @shop[:tel] = "0120-4444-4444"
 @shop[:abstract] = "概要パックマン"
@@ -41,7 +41,7 @@
 
 @shop = Shop.new
 @shop[:name] = "マ・マー・マー"
-@shop[:image_path] = ""
+@shop[:image_path] = "/assets/oshare_store.jpg"
 @shop[:address] = "福岡県和白"
 @shop[:tel] = "0880-5296-1111"
 @shop[:abstract] = "概要パスタ"
@@ -52,7 +52,7 @@
 
 @shop = Shop.new
 @shop[:name] = "パラサイト・イヴ二ング"
-@shop[:image_path] = ""
+@shop[:image_path] = "/assets/oshare_store.jpg"
 @shop[:address] = "福岡県和白"
 @shop[:tel] = "0120-202-2222"
 @shop[:abstract] = "概要触手"
