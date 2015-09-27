@@ -3,9 +3,16 @@
 
 <%= form_for "shop", :url => shops_path , :html => {:method => "GET"} do |f| %>
   <%= f.label "カテゴリー" %><br>
-  <%= f.check_box :category, {multiple: true}, "food" %>
+  <%= f.check_box :category, {multiple: true}, "food", nil %>
   <%= f.label "Food" %>
-  <%= f.check_box :category, {multiple: true}, "ring" %>
-  <%= f.label "Ring" %>
+  <%= f.check_box :category, {multiple: true}, "ring", nil %>
+  <%= f.label "Ring" %><br>
+  <%= f.label "シチュエーション" %><br>
+  <%= f.radio_button :situation, "false", {checked: true} %>
+  <%= f.label "未選択" %>
+  <%= f.radio_button :situation, "present", {} %>
+  <%= f.label "Present" %>
+  <%= f.radio_button :situation, "birthday", {} %>
+  <%= f.label "Birthday" %>
   <%= f.submit %>
 <% end %>

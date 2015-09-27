@@ -1,14 +1,13 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :check_conditions, only: [:index]
   before_action :set_params, only: [:index]
   # GET /shops
   # GET /shops.json
   def index
-    if params[:shop][:category].empty?
-      redirect_to(root_path)
-    else
-      @shops = @shops.filter_category
-    end
+    category_filter
+    situation_filter
+    @shops = @shops.get_matching_shops
   end
 
   # GET /shops/1
@@ -72,11 +71,23 @@ class ShopsController < ApplicationController
   end
 
   def set_params
-    params[:shop][:category].delete("0")
     @shops = Shop.new
-    @shops.set_params(params[:shop][:category])
+    @shops.set_category(params[:shop][:category])
+    @shops.set_situation(params[:shop][:situation])
   end
 
+
+  def check_conditions
+    redirect_to(root_path) if params[:shop].fetch(:situation) == "false" && !params[:shop].include?(:category)
+  end
+
+  def category_filter
+    @shops.filter_category if params[:shop].include?(:category)
+  end
+
+  def situation_filter
+    @shops.filter_situation unless params[:shop].has_value?("false")
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def shop_params
     params.require(:shop).permit(:name, :image_path, :address, :tel, :abstract, :store_hours, :category, :situation)

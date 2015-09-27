@@ -5,16 +5,35 @@ class Shop < ActiveRecord::Base
   end
 
   def filter_category
-    @param.each do |category|
+    @categorys.each do |category|
       @hit_shops = Shop.where("category like ?", "%#{category}%")
       matching_shops_ids(category)
     end
-    avoid_redundant_id
-    return @shops
+    @shop_ids.uniq!
   end
 
-  def set_params(param)
-    @param = param
+  def filter_situation
+    hit_shops = Shop.where("situation like ?", "%#{@situation}%")
+    hit_shops.map{|hit_shop|
+      @shop_ids << hit_shop.id
+    }
+    @shop_ids.sort!
+    @shop_ids = @shop_ids.select.with_index{|e, i| e == @shop_ids[i+1]} unless @categorys.class == NilClass
+  end
+
+  def set_category(params)
+    @categorys = params
+  end
+
+  def set_situation(params)
+    @situation = params
+  end
+
+  def get_matching_shops
+    @shop_ids.each do |id|
+      @shops << Shop.find_by(id: id)
+    end
+    return @shops
   end
 
   private
@@ -25,13 +44,6 @@ class Shop < ActiveRecord::Base
       shop_category.map{ |str|
         @shop_ids << shop.id if str == category
       }
-    end
-  end
-
-  def avoid_redundant_id
-    @shop_ids.uniq!
-    @shop_ids.each do |id|
-      @shops << Shop.find_by(id: id)
     end
   end
 end
