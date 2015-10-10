@@ -1,9 +1,9 @@
 class Shop < ActiveRecord::Base
-  attr_accessor :shops, :categorys, :situation, :area
+  attr_accessor :shops, :conditions_categorys, :conditions_situation, :area
 
   def filter_category
     @shop_ids = []
-    @categorys.each do |category|
+    @conditions_categorys.each do |category|
       @hit_shops = Shop.where("category like ?", "%#{category}%")
       matching_shops_ids(category)
     end
@@ -11,31 +11,25 @@ class Shop < ActiveRecord::Base
   end
 
   def filter_situation
-    hit_shops = Shop.where("situation like ?", "%#{@situation}%")
-    hit_shops.map{|hit_shop|
-      @shop_ids << hit_shop.id
-    }
-    @shop_ids.sort!
-    @shop_ids = @shop_ids.select.with_index{|e, i| e == @shop_ids[i+1]} unless @categorys.class == NilClass
+    hit_shops = Shop.where("situation like ?", "%#{@conditions_situation}%")
+    hit_shop_ids = hit_shops.map{|hit_shop| hit_shop.id}
+    @shop_ids = @shop_ids & hit_shop_ids
   end
 
   def filter_area
     if @area.present?
       hit_shops = Shop.where("address like ?", "%#{@area}%")
-      hit_shops.map{|hit_shop|
-        @shop_ids << hit_shop.id
-      }
-      @shop_ids.sort!
-      @shop_ids = @shop_ids.select.with_index{|e, i| e == @shop_ids[i+1]}
+      hit_shop_ids = hit_shops.map{|hit_shop| hit_shop.id}
+      @shop_ids = @shop_ids & hit_shop_ids
     end
   end
 
   def set_category(params)
-    @categorys = params
+    @conditions_categorys = params
   end
 
   def set_situation(params)
-    @situation = params
+    @conditions_situation = params
   end
 
   def set_area(params)

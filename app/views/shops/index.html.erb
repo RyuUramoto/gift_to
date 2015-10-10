@@ -2,8 +2,8 @@
 
 <h1>Listing Shops</h1>
 <h2>検索条件</h2>
-<p>カテゴリー:<%= @shops.categorys.join(",") %></p>
-<p>シチュエーション:<%= @shops.situation unless @shops.situation == "false" %></p>
+<p>カテゴリー:<%= @shops.conditions_categorys.join(",") %></p>
+<p>シチュエーション:<%= @shops.conditions_situation unless @shops.conditions_situation == "false" %></p>
 <p>地域:<%= @shops.area %></p>
 
 <table>
