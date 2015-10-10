@@ -31,10 +31,15 @@
         <td><%= link_to 'Show', shop %></td>
         <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
         <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><img src = <%= shop.image_path %> /></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+
+<img src="/assets/oshare_store.jpg" alt="load"/>
+
 
 <br>
 
