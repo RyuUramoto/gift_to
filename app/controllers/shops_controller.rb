@@ -7,7 +7,8 @@ class ShopsController < ApplicationController
   def index
     category_filter
     situation_filter
-    @shops = @shops.get_matching_shops
+    @shops.filter_area
+    @shops.set_matching_shops
   end
 
   # GET /shops/1
@@ -72,21 +73,22 @@ class ShopsController < ApplicationController
 
   def set_params
     @shops = Shop.new
-    @shops.set_category(params[:shop][:category])
-    @shops.set_situation(params[:shop][:situation])
+    @shops.set_category(params[:top][:category])
+    @shops.set_situation(params[:top][:situation])
+    @shops.set_area(params[:top][:area])
   end
 
 
   def check_conditions
-    redirect_to(root_path) if params[:shop].fetch(:situation) == "false" && !params[:shop].include?(:category)
+    redirect_to(root_path) if params[:top].fetch(:situation) == "false" && !params[:top].include?(:category)
   end
 
   def category_filter
-    @shops.filter_category if params[:shop].include?(:category)
+    @shops.filter_category if params[:top].include?(:category)
   end
 
   def situation_filter
-    @shops.filter_situation unless params[:shop].has_value?("false")
+    @shops.filter_situation unless params[:top].has_value?("false")
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def shop_params

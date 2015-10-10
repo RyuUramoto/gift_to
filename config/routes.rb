@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "tops#index"
-  resources :shops
+  post "top/new", as: "shops", to: "shops#index", path: "shops"
+  resources :shops, except: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
