@@ -24,7 +24,7 @@
   <tbody>
     <% @shops.shops.each do |shop| %>
       <tr>
-        <td><%= shop.name %></td>
+        <td><%= link_to shop.name, shop_path(shop.id) %></td>
         <td><%= shop.image_path %></td>
         <td><%= shop.address %></td>
         <td><%= shop.tel %></td>
