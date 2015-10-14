@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Shops</h1>
+<h2>検索条件</h2>
+<p>カテゴリー:<%= @shops.conditions_categorys.join(",") %></p>
+<p>シチュエーション:<%= @shops.conditions_situation unless @shops.conditions_situation == "false" %></p>
+<p>地域:<%= @shops.area %></p>
 
 <table>
   <thead>
@@ -18,7 +22,7 @@
   </thead>
 
   <tbody>
-    <% @shops.each do |shop| %>
+    <% @shops.shops.each do |shop| %>
       <tr>
         <td><%= shop.name %></td>
         <td><%= shop.image_path %></td>
@@ -38,7 +42,7 @@
 </table>
 
 
-<img src="/assets/oshare_store.jpg" alt="load"/>
+<!-- <img src="/assets/oshare_store.jpg" alt="load"/> -->
 
 
 <br>
