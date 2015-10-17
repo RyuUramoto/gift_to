@@ -1,90 +1,27 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Gift to</title>
-  <link rel="stylesheet" href="./../../assets/stylesheets/normalize.css">
-  <link rel="stylesheet" href="./../../assets/stylesheets/top.css">
-</head>
-<body>
+<div id="info">
+  <p>プレゼント選びでお困りの方へ</p>
+</div>
 
-  <header>
-    <div id="headerInner">
-      <a href="top.html"><img src="logo2.png" width="221" height="94" alt="ロゴ"></a>
-      <ul>
-        <li><a href="">使い方</a></li>
-        <li><a href="">利用規約</a></li>
-      </ul>
-    </div>
-  </header>
+<div id="form">
+  <div class="formInner">
+    <%= form_for "top", :url => shops_path do |f| %>
+    <dl>
+      <dt><%= f.label "カテゴリー" %></dt>
+        <dd>
+          <li><%= f.check_box :category, {multiple: true}, "food", nil %><%= f.label "Food" %></li>
+          <li><%= f.check_box :category, {multiple: true}, "ring", nil %><%= f.label "Ring" %></li>          </dd>
 
-  <div id="info">
-    <p>プレゼント選びでお困りの方へ</p>
+      <dt><%= f.label "シチュエーション" %></dt>
+        <dd>
+          <li><%= f.radio_button :situation, "false", {checked: true} %><%= f.label "未選択" %></li>
+          <li><%= f.radio_button :situation, "present", {} %><%= f.label "Present" %></li>
+          <li><%= f.radio_button :situation, "birthday", {} %><%= f.label "Birthday" %></li>
+        </dd>
+
+      <dt><%= f.label "地域" %></dt>
+        <dd><li><%= f.text_field :area, :size => '30', :placeholder => "未入力なら現在地で検索"%></li></dd>
+    </dl>
+    <%= f.submit 'お店を検索', :class => 'submitBtn'%>
+    <% end %>
   </div>
-
-  <div id="form">
-    <div class="formInner">
-      <dl>
-        <dt>ジャンル</dt>
-          <dd>
-            <li><label><input type="checkbox" name="genre">服</label></li>
-            <li><label><input type="checkbox" name="genre">アクセサリー</label></li>
-            <li><label><input type="checkbox" name="genre">食器</label></li>
-            <li><label><input type="checkbox" name="genre">生活品</label></li>
-            <li><label><input type="checkbox" name="genre">服</label></li>
-            <li><label><input type="checkbox" name="genre">アクセサリー</label></li>
-            <li><label><input type="checkbox" name="genre">食器</label></li>
-            <li><label><input type="checkbox" name="genre">生活品</label></li>
-            <li><label><input type="checkbox" name="genre">服</label></li>
-            <li><label><input type="checkbox" name="genre">アクセサリー</label></li>
-            <li><label><input type="checkbox" name="genre">食器</label></li>
-            <li><label><input type="checkbox" name="genre">生活品</label></li>
-            <li><label><input type="checkbox" name="genre">服</label></li>
-            <li><label><input type="checkbox" name="genre">アクセサリー</label></li>
-            <li><label><input type="checkbox" name="genre">食器</label></li>
-            <li><label><input type="checkbox" name="genre">生活品</label></li>
-          </dd>
-
-        <dt>シチュエーション</dt>
-          <dd>
-            <li><label><input type="checkbox" name="situation">結婚式</label></li>
-            <li><label><input type="checkbox" name="situation">お歳暮</label></li>
-            <li><label><input type="checkbox" name="situation">誕生日</label></li>
-            <li><label><input type="checkbox" name="situation">結婚式</label></li>
-            <li><label><input type="checkbox" name="situation">お歳暮</label></li>
-            <li><label><input type="checkbox" name="situation">誕生日</label></li>
-            <li><label><input type="checkbox" name="situation">結婚式</label></li>
-            <li><label><input type="checkbox" name="situation">お歳暮</label></li>
-            <li><label><input type="checkbox" name="situation">誕生日</label></li>
-            <li><label><input type="checkbox" name="situation">結婚式</label></li>
-            <li><label><input type="checkbox" name="situation">お歳暮</label></li>
-            <li><label><input type="checkbox" name="situation">誕生日</label></li>
-          </dd>
-      </dl>
-      <button type="button" class="btn" onclick="location.href='index.html'">店を探す</button>
-    </div>
-  </div>
-
-  <%= form_for "top", :url => shops_path do |f| %>
-    <%= f.label "カテゴリー" %><br>
-    <%= f.check_box :category, {multiple: true}, "food", nil %>
-    <%= f.label "Food" %>
-    <%= f.check_box :category, {multiple: true}, "ring", nil %>
-    <%= f.label "Ring" %><br>
-    <%= f.label "シチュエーション" %><br>
-    <%= f.radio_button :situation, "false", {checked: true} %>
-    <%= f.label "未選択" %>
-    <%= f.radio_button :situation, "present", {} %>
-    <%= f.label "Present" %>
-    <%= f.radio_button :situation, "birthday", {} %>
-    <%= f.label "Birthday" %><br><br>
-    <%= f.label "地域" %>
-    <%= f.text_field :area %>
-    <%= f.submit %>
-  <% end %>
-
-  <footer>
-    <small>Copyright &copy; Chevalier.pop All right Reserved.</small>
-  </footer>
-</body>
-</html>
+</div>

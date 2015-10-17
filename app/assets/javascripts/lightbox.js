@@ -7,7 +7,7 @@ $(function(){
 	// ライトボックスを開く
 	$('a.lb').click(function(){
 		if(!$('#lb').length){
-			$('body').append('<div id="lbBg"></div><div id="lb"><div id="lbClose"><a href="javascript:void(0);"><img src="lb_close.png" width="30" height="30" alt="閉じる" /></a></div><div id="lbBody"></div></div>');
+			$('body').append('<div id="lbBg"></div><div id="lb"><div id="lbClose"><a href="javascript:void(0);"><img src="./../../assets/lb_close.png" width="30" height="30" alt="閉じる" /></a></div><div id="lbBody"></div></div>');
 		}
 		$('#lb, #lbBg').hide();
 

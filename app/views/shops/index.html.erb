@@ -1,131 +1,42 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Gift to</title>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-  <script src="./../../assets/javascripts/get_current_position.js"></script>
-  <link rel="stylesheet" href="./../../assets/stylesheets/normalize.css">
-  <link rel="stylesheet" href="./../../assets/stylesheets/top.css">
-  <link rel="stylesheet" href="./../../assets/stylesheets/index.css">
-</head>
-<body>
-  <header>
-    <div id="headerInner">
-      <a href="top.html"><img src="logo2.png" width="221" height="94" alt="ロゴ"></a>
+<section id="main">
+  <div class="searchConditions">
+    <h4>検索条件</h4>
+    <dl>
+      <dt>ジャンル</dt>
+      <dd>：<%= @shops.conditions_categorys.join(",") %></dd>
+
+      <dt>シチュエーション</dt>
+      <dd>：<%= @shops.conditions_situation unless @shops.conditions_situation == "false" %></dd>
+
+      <dt>地域</dt>
+      <dd>：<%= @shops.area %></dd>
+    </dl>
+  </div>
+
+  <div id="map">
+		<div id="map_canvas"></div>
+	</div>
+
+  <div id="shopList">
+    <div class="shopListInner">
       <ul>
-        <li><a href="">使い方</a></li>
-        <li><a href="">利用規約</a></li>
+        <% @shops.shops.each do |shop| %>
+        <li>
+          <!-- <a href="shop.html"> -->
+            <div class="shop">
+            <dl>
+                <dt>店名：</dt>
+                <dd><%= link_to shop.name, shop_path(shop.id) %></dd>
+
+                <dt>住所：</dt>
+                <dd><%= shop.address %></dd>
+              </dl>
+              <img src = <%= shop.image_path %>/>
+            </div>
+            <!-- </a> -->
+        </li>
+        <% end %>
       </ul>
     </div>
-  </header>
-
-  <section id="main">
-    <div class="searchConditions">
-      <h4>検索条件</h4>
-      <dl>
-        <dt>ジャンル</dt>
-        <dd>：<%= @shops.conditions_categorys.join(",") %></dd>
-
-        <dt>シチュエーション</dt>
-        <dd>：<%= @shops.conditions_situation unless @shops.conditions_situation == "false" %></dd>
-
-        <dt>地域</dt>
-        <dd>：<%= @shops.area %></dd>
-      </dl>
-    </div>
-
-    <div id="map">
-  		<div id="map_canvas"></div>
-  	</div>
-
-    <div id="shopList">
-      <div class="shopListInner">
-        <ul>
-          <% @shops.shops.each do |shop| %>
-          <li>
-            <!-- <a href="shop.html"> -->
-              <div class="shop">
-                <dl>
-                  <dt>店名：</dt>
-                  <dd><%= link_to shop.name, shop_path(shop.id) %></dd>
-
-                  <dt>住所：</dt>
-                  <dd><%= shop.address %></dd>
-                </dl>
-                <img src = <%= shop.image_path %>/>
-              </div>
-            <!-- </a> -->
-          </li>
-          <% end %>
-
-          <!-- <li>
-            <a href="shop.html">
-              <div class="shop">
-                <dl>
-                  <dt>店名：</dt>
-                  <dd>ここに店名が入ります</dd>
-
-                  <dt>住所：</dt>
-                  <dd>ここに住所が入ります</dd>
-                </dl>
-                <img src="images.jpeg" alt="お店の外観">
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="shop.html">
-              <div class="shop">
-                <dl>
-                  <dt>店名：</dt>
-                  <dd>ここに店名が入ります</dd>
-
-                  <dt>住所：</dt>
-                  <dd>ここに住所が入ります</dd>
-                </dl>
-                <img src="images.jpeg" alt="お店の外観">
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="shop.html">
-              <div class="shop">
-                <dl>
-                  <dt>店名：</dt>
-                  <dd>ここに店名が入ります</dd>
-
-                  <dt>住所：</dt>
-                  <dd>ここに住所が入ります</dd>
-                </dl>
-                <img src="images.jpeg" alt="お店の外観">
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="shop.html">
-              <div class="shop">
-                <dl>
-                  <dt>店名：</dt>
-                  <dd>ここに店名が入ります</dd>
-
-                  <dt>住所：</dt>
-                  <dd>ここに住所が入ります</dd>
-                </dl>
-                <img src="images.jpeg" alt="お店の外観">
-              </div>
-            </a>
-          </li> -->
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <small>Copyright &copy; Chevalier.pop All right Reserved.</small>
-  </footer>
-</body>
-</html>
+  </div>
+</section>

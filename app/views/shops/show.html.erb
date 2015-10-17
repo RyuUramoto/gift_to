@@ -1,140 +1,64 @@
-<!-- <p id="notice"><%= notice %></p>
+<div id="shopDetail">
+  <div id="shopInner">
+    <h1><%= @shop.name %></h1>
+    <div>
+      <table>
+        <tr>
+          <td>住所</td>
+          <td><%= @shop.address %></td>
+        </tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
+        <tr>
+          <td>TEL</td>
+          <td><%= @shop.tel %></td>
+        </tr>
 
-<p>
-  <strong>Image path:</strong>
-  <%= @shop.image_path %>
-</p>
+        <tr>
+          <td>営業時間</td>
+          <td><%= @shop.store_hours %></td>
+        </tr>
 
-<p>
-  <strong>Address:</strong>
-  <%= @shop.address %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @shop.tel %>
-</p>
-
-<p>
-  <strong>Abstract:</strong>
-  <%= @shop.abstract %>
-</p>
-
-<p>
-  <strong>Store hours:</strong>
-  <%= @shop.store_hours %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @shop.category %>
-</p>
-
-<p>
-  <strong>Situation:</strong>
-  <%= @shop.situation %>
-</p>
-
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
-<%= link_to 'Back', shops_path %> -->
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Gift to</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="./../../assets/javascripts/tab.js"></script>
-  <script type="text/javascript" src="./../../assets/javascripts/lightbox.js"></script>
-  <script type="text/javascript" src="./../../assets/javascripts/jquery.imagesLoaded.js"></script>
-  <link rel="stylesheet" href="./../../assets/stylesheets/normalize.css">
-  <link rel="stylesheet" href="./../../assets/stylesheets/top.css">
-  <link rel="stylesheet" href="./../../assets/stylesheets/shop.css">
-</head>
-<body>
-
-  <header>
-    <div id="headerInner">
-      <a href="top.html"><img src="logo2.png" width="221" height="94" alt="ロゴ"></a>
-      <ul>
-        <li><a href="">使い方</a></li>
-        <li><a href="">利用規約</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <div id="shopDetail">
-    <div id="shopInner">
-      <h1><%= @shop.name %></h1>
-      <div>
-        <table>
-          <tr>
-            <td>住所</td>
-            <td><%= @shop.address %></td>
-          </tr>
-
-          <tr>
-            <td>TEL</td>
-            <td><%= @shop.tel %></td>
-          </tr>
-
-          <tr>
-            <td>営業時間</td>
-            <td><%= @shop.store_hours %></td>
-          </tr>
-
-          <tr>
-            <td>その他</td>
-            <td>ここにその他が入ります</td>
-          </tr>
-          <img src = <%= @shop.image_path %>/>
-        </table>
-      </div>
-    </div>
-
-    <div class="abstruct">
-      <dl>
-        <dt>概要</dt>
-        <dd><%= @shop.abstract %></dd>
-      </dl>
-    </div>
-
-    <div class="tab">
-      <div class="tabBox">
-        <h4 class="tabMenu">商品</h4>
-        <ul id="goods">
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-          <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-        </ul>
-      </div>
-
-      <div class="tabBox">
-        <h4 class="tabMenu">アクセス</h4>
-        <p>ここにアクセスが入ります</p>
-      </div>
+        <tr>
+          <td>その他</td>
+          <td>ここにその他が入ります</td>
+        </tr>
+        <img src = <%= @shop.image_path %>/>
+      </table>
     </div>
   </div>
 
-  <footer>
-    <small>Copyright &copy; Chevalier.pop All right Reserved.</small>
-  </footer>
-</body>
-</html>
+  <div class="abstract">
+    <dl>
+      <dt>概要</dt>
+      <dd><%= @shop.abstract %></dd>
+    </dl>
+  </div>
+
+  <div class="tab">
+    <div class="tabBox">
+      <h4 class="tabMenu">商品</h4>
+      <ul id="goods">
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+        <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
+      </ul>
+    </div>
+
+    <div class="tabBox">
+      <h4 class="tabMenu">アクセス</h4>
+      <p>ここにアクセスが入ります</p>
+    </div>
+  </div>
+</div>
