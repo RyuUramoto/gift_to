@@ -1,14 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+  <meta charset="UTF-8">
   <title>GiftTo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div id="headerInner">
+      <%= link_to image_tag("logo.png", class: 'logo', alt: 'ロゴ', width: '221', height:'94'), root_path %>
+      <ul>
+        <li><a href="">使い方</a></li>
+        <li><a href="">利用規約</a></li>
+      </ul>
+    </div>
+  </header>
 
-<%= yield %>
+  <%= yield %>
+
+  <footer>
+    <small>Copyright &copy; Chevalier.pop All right Reserved.</small>
+  </footer>
 
 </body>
 </html>

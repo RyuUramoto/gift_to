@@ -12,4 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require_normalize
+ *= require_top
+ *= require_index
+ *= require_shop
  */

@@ -96,18 +96,18 @@ td {
   height: 100%;
 }
 
-.abstruct dl {
+.abstract dl {
   width: 900px;
   margin: 50px auto;
 }
 
-.abstruct dt {
+.abstract dt {
   background-color: #d4d4d4;
   border: solid 1px black;
   text-align: center;
 }
 
-.abstruct dd {
+.abstract dd {
   border: solid 1px black;
   border-top: 0;
   padding: 10px;
