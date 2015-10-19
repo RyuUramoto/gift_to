@@ -146,3 +146,18 @@ td {
 	right: 6px;
 	z-index: 1;
 }
+
+
+#access {
+  width: 880px;
+  height: auto;
+
+  overflow: hidden;
+  margin: auto;
+}
+
+#access_canvas {
+  width: 880px;
+  height: 400px;
+  margin: 20px auto;
+}

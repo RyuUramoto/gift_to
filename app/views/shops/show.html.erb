@@ -56,9 +56,22 @@
       </ul>
     </div>
 
-    <div class="tabBox">
+    <!-- <div class="tabBox">
       <h4 class="tabMenu">アクセス</h4>
-      <p>ここにアクセスが入ります</p>
+
+    </div> -->
+    <div id="access">
+      <div id="access_canvas"></div>
     </div>
   </div>
 </div>
+
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'access_canvas'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(17);
+});
+</script>

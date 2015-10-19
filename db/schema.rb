@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20150926020809) do
     t.string   "name",        limit: 255
     t.string   "image_path",  limit: 255
     t.string   "address",     limit: 255
+    t.float    "latitude",    limit: 24
+    t.float    "longitude",   limit: 24
     t.string   "tel",         limit: 255
     t.text     "abstract",    limit: 65535
     t.string   "store_hours", limit: 255

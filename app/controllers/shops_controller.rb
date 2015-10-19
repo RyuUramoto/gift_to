@@ -8,12 +8,14 @@ class ShopsController < ApplicationController
     category_filter
     situation_filter
     @shops.filter_area
-    @shops.set_matching_shops
+    @found_shops = @shops.set_matching_shops
+    set_markers(@found_shops)
   end
 
   # GET /shops/1
   # GET /shops/1.json
   def show
+    set_markers(@shop)
   end
 
   # GET /shops/new
@@ -93,5 +95,14 @@ class ShopsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def shop_params
     params.require(:shop).permit(:name, :image_path, :address, :tel, :abstract, :store_hours, :category, :situation)
+  end
+
+  def set_markers(shops)
+    @hash = Gmaps4rails.build_markers(shops) do |shop, marker|
+      marker.lat shop.latitude
+      marker.lng shop.longitude
+      marker.infowindow shop.name
+      marker.json({name: shop.name})
+    end
   end
 end

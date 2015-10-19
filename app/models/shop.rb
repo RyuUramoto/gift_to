@@ -1,5 +1,7 @@
 class Shop < ActiveRecord::Base
-  attr_accessor :shops, :conditions_categorys, :conditions_situation, :area
+  geocoded_by :address
+  after_validation :geocode
+  attr_accessor :conditions_categorys, :conditions_situation, :area
 
   def filter_category
     @shop_ids = []
@@ -41,6 +43,7 @@ class Shop < ActiveRecord::Base
     @shop_ids.each do |id|
       @shops << Shop.find_by(id: id)
     end
+    return @shops
   end
 
   private

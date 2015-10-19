@@ -11,32 +11,41 @@
       <dt>地域</dt>
       <dd>：<%= @shops.area %></dd>
     </dl>
-  </div>
+  </div> 
 
   <div id="map">
-		<div id="map_canvas"></div>
-	</div>
+    <div id="map_canvas"></div>
+  </div>
 
   <div id="shopList">
     <div class="shopListInner">
       <ul>
-        <% @shops.shops.each do |shop| %>
+        <% @found_shops.each do |shop| %>
         <li>
           <!-- <a href="shop.html"> -->
-            <div class="shop">
+          <div class="shop">
             <dl>
-                <dt>店名：</dt>
-                <dd><%= link_to shop.name, shop_path(shop.id) %></dd>
+              <dt>店名：</dt>
+              <dd><%= link_to shop.name, shop_path(shop.id) %></dd>
 
-                <dt>住所：</dt>
-                <dd><%= shop.address %></dd>
-              </dl>
-              <img src = <%= shop.image_path %>/>
-            </div>
-            <!-- </a> -->
+              <dt>住所：</dt>
+              <dd><%= shop.address %></dd>
+            </dl>
+            <img src = <%= shop.image_path %>/>
+          </div>
+          <!-- </a> -->
         </li>
         <% end %>
       </ul>
     </div>
   </div>
 </section>
+
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map_canvas'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>

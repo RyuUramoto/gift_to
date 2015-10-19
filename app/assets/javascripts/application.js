@@ -15,3 +15,5 @@
 //= require jquery.imagesLoaded
 //= require tab
 //= require lightbox
+//= require underscore
+//= require gmaps/google
