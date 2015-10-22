@@ -29,7 +29,6 @@
 #map {
 	width: 980px;
 	height: auto;
-
 	overflow: hidden;
 	margin: auto;
 }
@@ -38,6 +37,12 @@
   width: 980px;
 	height: 400px;
 	margin: 20px auto;
+}
+
+#current_map_canvas {
+  width: 980px;
+  height: 400px;
+  margin: 20px auto;
 }
 
 #shopList {

@@ -13,9 +13,15 @@
     </dl>
   </div> 
 
+<% if @shops.area.empty? %>
+  <div id="map">
+    <div id="current_map_canvas"></div>
+  </div>
+<% else %>
   <div id="map">
     <div id="map_canvas"></div>
   </div>
+<% end %>
 
   <div id="shopList">
     <div class="shopListInner">
@@ -40,6 +46,25 @@
     </div>
   </div>
 </section>
+
+<script>
+current_handler = Gmaps.build('Google');
+current_handler.buildMap({ provider: {}, internal: {id: 'current_map_canvas'}}, function(){
+  if(navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(displayOnMap);
+  current_markers = current_handler.addMarkers(<%=raw @hash.to_json %>);
+  current_handler.bounds.extendWith(markers);
+  current_handler.fitMapToBounds();
+});
+
+function displayOnMap(position){
+  var current_marker = current_handler.addMarker({
+    lat: position.coords.latitude,
+    lng: position.coords.longitude
+  });
+  current_handler.map.centerOn(current_marker);
+};
+</script>
 
 <script>
 handler = Gmaps.build('Google');
