@@ -39,11 +39,11 @@
           <!-- <h4 class="tabMenu">商品</h4> -->
           <div id="pageLink">
             <ul>
-              <li><a href="#">商品画像</a></li>
-              <li><a href="#">アクセス</a></li>
+              <li><a href="#goodsLink">商品画像</a></li>
+              <li><a href="#accessLink">アクセス</a></li>
             </ul>
           </div>
-          <h2>商品画像</h2>
+          <h3 id="goodsLink">商品画像</h3>
           <ul id="goods">
             <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
             <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
@@ -67,7 +67,7 @@
           <h4 class="tabMenu">アクセス</h4>
         </div> -->
       <!-- </div> -->
-
+      <h3 id="accessLink">アクセス</h3>
       <div id="access">
         <div id="access_canvas"></div>
       </div>

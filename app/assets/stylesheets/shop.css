@@ -164,6 +164,8 @@ td {
   font-size: 30px;
   line-height: 80px;
   text-align: center;
+  /*margin: 0 2%;
+  width: 46%;*/
   width: 50%;
   height: 80px;
 }
@@ -177,6 +179,11 @@ td {
 #pageLink a:hover {
   background: linear-gradient(#ffcd5e, #ffecb6);
   display: block;
+}
+
+h3 {
+  border-bottom: 1px solid #666666;
+  border-left: 7px solid #666666;
 }
 
 #access {
