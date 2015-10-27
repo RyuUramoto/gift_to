@@ -3,19 +3,21 @@
   border: solid 1px #E0E0E0;
   border-radius: 6px;
   box-shadow: 2px 2px 2px 0 rgba(150,150,150,0.4);
-  width: 980px;
+  /*width: 980px;*/
+  /*width: 75%;*/
   height: auto;
   margin: 24px auto 20px;
 }
 
 #shopInner {
-  margin: 20px 40px 0;
+  margin: 20px 40px;
 }
 
 table {
   border: collapse;
   margin-top: 20px;
-  width: 300px;
+  /*width: 300px;*/
+  width: 40%;
   height: 200px;
 }
 
@@ -34,7 +36,7 @@ td {
   float: right;
 }
 
-.tab {
+/*.tab {
   width: 900px;
   margin: 40px auto;
 }
@@ -78,17 +80,20 @@ td {
   padding: 12px 8px 8px 8px;
   text-align: center;
   border: 2px solid #ccc;
-}
+}*/
 
 #goods {
-  overflow: hidden;
+  overflow: scroll;
+  /*width: 100%;*/
+  margin: auto;
 }
 #goods li {
-  width: 200px;
+  /*width: 200px;
   height: 200px;
+  margin: 10px;*/
   list-style: none;
   float: left;
-  margin: 10px;
+  overflow: hidden;
 }
 
 .goodsImage {
@@ -97,7 +102,8 @@ td {
 }
 
 .abstract dl {
-  width: 900px;
+  /*width: 900px;*/
+  width: 100%;
   margin: 50px auto;
 }
 
@@ -147,9 +153,35 @@ td {
 	z-index: 1;
 }
 
+#pageLink ul {
+  font-size: 0;
+  margin: 30px 0;
+  width: 100%;
+}
+
+#pageLink li {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 80px;
+  text-align: center;
+  width: 50%;
+  height: 80px;
+}
+
+#pageLink a {
+  background: linear-gradient(#ffecb6, #ffcd5e);
+  color: #613d00;
+  display: block;
+}
+
+#pageLink a:hover {
+  background: linear-gradient(#ffcd5e, #ffecb6);
+  display: block;
+}
 
 #access {
-  width: 880px;
+  /*width: 880px;*/
+  width: 100%;
   height: auto;
 
   overflow: hidden;
@@ -157,7 +189,33 @@ td {
 }
 
 #access_canvas {
-  width: 880px;
+  /*width: 880px;*/
+  width: 100%;
   height: 400px;
   margin: 20px auto;
+}
+
+@media screen and (min-width: 1280px) {
+  #shopDetail {
+    width: 1280px;
+  }
+
+  #goods li {
+    width: 260px;
+    height: 260px;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #shopDetail {
+    width: 980px;
+    margin: 50px auto;
+  }
+
+  #goods li {
+    width: 195px;
+    height: 195px;
+    margin: 15px;
+  }
 }
