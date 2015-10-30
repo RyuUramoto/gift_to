@@ -1,46 +1,19 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+  before_action :set_shop, only: [:show, :update, :destroy]
   before_action :check_conditions, only: [:index]
   before_action :set_params, only: [:index]
   # GET /shops
   # GET /shops.json
   def index
-    category_filter
-    situation_filter
+    conditions_filter
     @shops.filter_area
     @found_shops = @shops.set_matching_shops
-    set_markers(@found_shops)
+    @hash = @shops.get_markers(@found_shops)
   end
 
   # GET /shops/1
   # GET /shops/1.json
   def show
-    set_markers(@shop)
-  end
-
-  # GET /shops/new
-  def new
-    @shop = Shop.new
-  end
-
-  # GET /shops/1/edit
-  def edit
-  end
-
-  # POST /shops
-  # POST /shops.json
-  def create
-    @shop = Shop.new(shop_params)
-
-    respond_to do |format|
-      if @shop.save
-        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
-        format.json { render :show, status: :created, location: @shop }
-      else
-        format.html { render :new }
-        format.json { render json: @shop.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /shops/1
@@ -71,38 +44,29 @@ class ShopsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_shop
     @shop = Shop.find(params[:id])
+    @hash = Shop.new.get_markers(@shop)
   end
 
   def set_params
     @shops = Shop.new
-    @shops.set_category(params[:top][:category])
-    @shops.set_situation(params[:top][:situation])
-    @shops.set_area(params[:top][:area])
+    @shops.set_params(params)
   end
-
 
   def check_conditions
-    redirect_to(root_path) if params[:top].fetch(:situation) == "false" && !params[:top].include?(:category)
+    begin
+      redirect_to(root_path) if params[:top].fetch(:situation) == "false" && !params[:top].include?(:category)
+    rescue
+      redirect_to(root_path)
+    end
   end
 
-  def category_filter
-    @shops.filter_category if params[:top].include?(:category)
-  end
-
-  def situation_filter
+  def conditions_filter
+    @shops.filter_category
     @shops.filter_situation unless params[:top].has_value?("false")
   end
+
   # Never trust parameters from the scary internet, only allow the white list through.
   def shop_params
     params.require(:shop).permit(:name, :image_path, :address, :tel, :abstract, :store_hours, :category, :situation)
-  end
-
-  def set_markers(shops)
-    @hash = Gmaps4rails.build_markers(shops) do |shop, marker|
-      marker.lat shop.latitude
-      marker.lng shop.longitude
-      marker.infowindow shop.name
-      marker.json({name: shop.name})
-    end
   end
 end

@@ -26,24 +26,29 @@ class Shop < ActiveRecord::Base
     end
   end
 
-  def set_category(params)
-    @conditions_categorys = params
-  end
-
-  def set_situation(params)
-    @conditions_situation = params
-  end
-
-  def set_area(params)
-    @area = params
-  end
-
   def set_matching_shops
     @shops = []
     @shop_ids.each do |id|
       @shops << Shop.find_by(id: id)
     end
     return @shops
+  end
+
+  def set_params(params)
+    params.require(:top).permit(:category, :situation, :area)
+    @conditions_categorys = params[:top][:category]
+    @conditions_situation = params[:top][:situation]
+    @area = params[:top][:area]
+  end
+
+  def get_markers(shops)
+    hash = Gmaps4rails.build_markers(shops) do |shop, marker|
+      marker.lat shop.latitude
+      marker.lng shop.longitude
+      marker.infowindow shop.name
+      marker.json({name: shop.name})
+    end
+    return hash
   end
 
   private
