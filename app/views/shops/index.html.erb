@@ -1,5 +1,5 @@
 <section id="main">
-  <div class="searchConditions">
+  <div id="searchConditions">
     <h4>検索条件</h4>
     <dl>
       <dt>ジャンル</dt>
@@ -11,34 +11,31 @@
       <dt>地域</dt>
       <dd>：<%= @shops.area %></dd>
     </dl>
-  </div> 
-
-<div id="map">
-  <div id="map_canvas"></div>
-</div>
-
-<div id="shopList">
-  <div class="shopListInner">
-    <ul>
-      <% @found_shops.each do |shop| %>
-      <li>
-        <!-- <a href="shop.html"> -->
-        <div class="shop">
-          <dl>
-            <dt>店名：</dt>
-            <dd><%= link_to shop.name, shop_path(shop.id) %></dd>
-
-            <dt>住所：</dt>
-            <dd><%= shop.address %></dd>
-          </dl>
-          <img src = <%= shop.image_path %>/>
-        </div>
-        <!-- </a> -->
-      </li>
-      <% end %>
-    </ul>
   </div>
-</div>
+
+  <div id="map">
+    <div id="map_canvas"></div>
+  </div>
+
+  <div id="shopList">
+    <div id="shopListInner">
+      <ul>
+        <% @found_shops.each do |shop| %>
+          <li>
+            <div id="shop">
+              <%= link_to shop_path(shop.id) do %>
+                <img src = <%= shop.image_path %>/>
+                <div id="shopName">
+                  <h2><%= shop.name %></h2>
+                  <p>住所：<%= shop.address %></p>
+                </div>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <script>

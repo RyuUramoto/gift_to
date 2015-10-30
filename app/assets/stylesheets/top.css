@@ -9,28 +9,35 @@ body {
 }
 
 .formInner{
+  /*width: 980px;*/
+  width: 75%;
+
+  margin: 30px auto;
+
   background-color: white;
   border: solid 1px #E0E0E0;
   border-radius: 6px;
   box-shadow: 2px 2px 2px 0 rgba(150,150,150,0.4);
-  /*width: 980px;*/
-  width: 75%;
-  margin: 30px auto;
   overflow: hidden;
 }
 
 header {
-  background-color: white;
   width: 100%;
   height: 100px;
 
-  box-shadow: 0 3px 3px 0 rgba(150,150,150,0.4);
   margin: auto;
+
+  background-color: white;
+  box-shadow: 0 3px 3px 0 rgba(150,150,150,0.4);
+}
+
+header img {
+  float: left;
 }
 
 .logo {
-  float: left;
   padding-left: 12.5%;
+  float: left;
 }
 
 /*header ul {
@@ -53,24 +60,28 @@ header li a {
   width: 100%;
   height: 300px;
 
+  margin: 4px auto 0;
+
   background: rgb(247, 247, 247);
   border-bottom: solid 7px #885a00;
-  margin: 4px auto 0;
 }
 
 #info p {
+  width: calc(100% - 450px);
   color: #f251ad;
+  float: right;
   font-family: "Hannotate SC";
-  font-weight: bold;
   font-size: 45px;
+  font-weight: bold;
+  line-height: 90px;
   text-align: center;
   text-shadow:3px 3px 3px #fff;
-  line-height: 200px;
 }
 
 #form {
   /*width: 1280px;*/
   width: 100%;
+
   background-color: #FFFAEC;
   /*position: relative;*/
   overflow: hidden;
@@ -88,49 +99,51 @@ header li a {
   font-weight : bold;
 
   margin-bottom : 10px;
-
-  border-bottom: 1px solid #666666;
-  border-left: 7px solid #666666;
-
   padding-top : 2px;
   padding-left : 8px;
   padding-bottom : 2px;
+
+  border-bottom: 1px solid #666666;
+  border-left: 7px solid #666666;
 }
 
 #form dd {
-  font-size : 80%;
-  line-height : 1.8;
   margin-bottom : 45px;
-
   padding-left : 30px;
   padding-right : 15px;
 
+  font-size : 80%;
+  line-height : 1.8;
   overflow: hidden;
 }
 
 #form li {
   width: 98px;
+
+  margin-right: 20px;
+
   float: left;
   list-style: none;
-  margin-right: 20px;
 }
 
 .submitBtn {
   width: 200px;
   height: 50px;
+
   margin: 30px auto;
-  font-weight: bold;
-  font-size: 20px;
+
+  background-color: #f90;
+  background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+  border: none;
+  border-radius: 6px;
+  color: #fff;
   display: block;
+  font-size: 20px;
+  font-weight: bold;
   transition-duration: .5s;
   transition-property: background-color;
   text-align: center;
   text-decoration: none;
-  color: #fff;
-  border-radius: 6px;
-  border: none;
-  background-color: #f90;
-  background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
@@ -138,6 +151,7 @@ footer {
   /*width: 1280px;*/
   width: 100%;
   height: 100px;
+  
   background-color: #454545;
   color: white;
   text-align: center;

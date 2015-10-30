@@ -2,30 +2,33 @@
   /*width: 1280px;*/
   width: 100%;
   /*height: auto;*/
-  overflow: hidden;
-  background-color: #FFFAEC;
+
   margin: 4px auto 0;
+
+  background-color: #FFFAEC;
+  overflow: hidden;
 }
 
-.searchConditions {
+#searchConditions {
   /*width: 980px;*/
   width: 75%;
   margin: auto;
   padding: 20px 0;
 }
 
-.searchConditions h4 {
+#searchConditions h4 {
   border-bottom: 1px solid #666666;
   border-left: 7px solid #666666;
 }
 
-.searchConditions dt {
-  float: left;
-  margin-left: 30px;
+#searchConditions dt {
   width: 144px;
+  margin-left: 30px;
+
+  float: left;
 }
 
-.searchConditions dd {
+#searchConditions dd {
   padding: 0;
 }
 
@@ -33,8 +36,10 @@
 	/*width: 980px;*/
   width: 75%;
 	height: auto;
+
+  margin: auto;
+
 	overflow: hidden;
-	margin: auto;
 }
 
 #map_canvas {
@@ -48,54 +53,72 @@
   /*width: 980px;*/
   width: 75%;
   height: auto;
+
   margin: auto;
   margin-bottom: 50px;
 }
 
-.shopListInner {
+#shopListInner {
   /*width: 980px;*/
   width: 100%;
+
   background-color: white;
   border: solid 1px #E0E0E0;
   border-radius: 6px;
   box-shadow: 2px 2px 2px 0 rgba(150,150,150,0.4);
+  overflow: hidden;
 }
 
 #shopList li {
   /*width: 980px;*/
   width: 100%;
-  height: 150px;
-  list-style: none;
-}
-
-#shopList a {
-  width: 100%;
   height: 100%;
-  border: none;
-  display: block;
+  /*float: left;*/
+  list-style: none;
+  /*margin: 3%;*/
+  /*overflow: hidden;*/
 }
 
 #shopList li:not(:last-child) {
   border-bottom: solid 1px #666666;
 }
 
-.shop {
+.shopLink {
+  background: green;
+}
+
+
+#shop {
   width: 100%;
-  height: 100%;
+  height: 250px;
+
+  overflow: hidden;
   position: relative;
 }
 
-.shop p {
+#shop:hover {
+  background: linear-gradient(white, #e0e0e0);
+}
+
+#shop img {
+  width: 400px;
+  height: 200px;
+
+  padding: 25px;
+
   float: left;
 }
-.shop img {
-  width: 120px;
-  height: 120px;
+
+#shop h2 {
+  color: #f99868;
+}
+
+#shopName {
+  width: calc(100% - 450px);
+  height: calc(100% - 80px);
+
+  padding-top: 80px;
+
   float: right;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: calc(100% - 150px);
-  margin: auto;
+  overflow: hidden;
 }
