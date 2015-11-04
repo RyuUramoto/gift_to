@@ -1,4 +1,5 @@
 class Shop < ActiveRecord::Base
+  has_many :item
   geocoded_by :address
   after_validation :geocode
   attr_accessor :conditions_categorys, :conditions_situation, :area
