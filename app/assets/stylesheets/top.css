@@ -8,7 +8,7 @@ body {
   margin: auto;
 }
 
-.formInner{
+#formInner{
   /*width: 980px;*/
   width: 75%;
 
@@ -31,9 +31,9 @@ header {
   box-shadow: 0 3px 3px 0 rgba(150,150,150,0.4);
 }
 
-header img {
+/*header img {
   float: left;
-}
+}*/
 
 .logo {
   margin-left: 12.5%;
@@ -87,14 +87,14 @@ header li a {
   overflow: hidden;
 }
 
-#form dl {
+#formInner dl {
   /*width : 900px;*/
   width: 95%;
   height: auto;
   margin: 50px auto;
 }
 
-#form dt {
+#formInner dt {
   font-size : 15px;
   font-weight : bold;
 
@@ -107,7 +107,7 @@ header li a {
   border-left: 7px solid #666666;
 }
 
-#form dd {
+#formInner dd {
   margin-bottom : 45px;
   padding-left : 30px;
   padding-right : 15px;
@@ -117,7 +117,7 @@ header li a {
   overflow: hidden;
 }
 
-#form li {
+#formInner li {
   width: 98px;
 
   margin-right: 20px;
@@ -167,3 +167,106 @@ footer {
     width: 1280px;
   }
 }
+
+/*@media screen and (max-width: 320px) {
+  body {
+    border-top: solid 30px #F9EC6F;
+  }
+
+  header {
+    width: 100%;
+    height: 300px;
+  }
+
+  .logo {
+    width: 705px;
+    height: 300px;
+  }
+
+  #info {
+    width: 100%;
+    height: 600px;
+
+    border-bottom: none;
+  }
+
+  #form {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #formInnerMobile h1 {
+    background-color: #FEBC82;
+    color: white;
+    font-size: 130px;
+    padding-left: 5%;
+  }
+
+  #formInnerMobile ul {
+    width: 90%;
+    margin: 50px 5%;
+    overflow: hidden;
+  }
+
+  #formInnerMobile li {
+    width: 49%;
+
+    margin-right: 11px;
+
+    font-size: 80px;
+    float: left;
+    list-style: none;
+  }
+
+  .checkBox {
+    width: 60px;
+    height: 60px;
+  }
+
+  .situationPullDown {
+    width: 90%;
+    height: 150px;
+
+    font-size: 100px;
+    margin: 50px 5%;
+  }
+
+  .textField {
+    width: 100%;
+    height: 150px;
+
+    margin: 50px 0;
+
+    font-size: 100px;
+    line-height: 150px;
+  }
+
+  .submitBtn {
+    width: 90%;
+    height: 300px;
+
+    background-color: #f90;
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+    border: none;
+    border-radius: 60px;
+    color: #fff;
+    font-size: 130px;
+    font-weight: bold;
+    margin: 0 5% 200px;
+    transition-duration: .5s;
+    transition-property: background-color;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  }
+
+  footer {
+    width: 100%;
+    height: 500px;
+
+    font-size: 100px;
+  }
+  span {
+    display: block;
+  }
+}*/

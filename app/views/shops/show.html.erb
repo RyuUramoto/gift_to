@@ -46,23 +46,8 @@
           <h3 id="goodsLink">商品画像</h3>
           <ul id="goods">
             <% @shop.item.all.each do |item| %>
-            <li><a href=<%= item.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= item.image_path %> alt="商品の写真"></a></li>
+              <li><a href=<%= item.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= item.image_path %> width="200" height="200" alt="商品の写真"></a></li>
             <% end %>
-            <!-- <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li>
-            <li><a href=<%= @shop.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= @shop.image_path %> alt="商品の写真"></a></li> -->
           </ul>
         <!-- </div> -->
 

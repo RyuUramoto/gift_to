@@ -1,12 +1,18 @@
 <div id="info">
   <div class="inner">
     <img src="assets/info_image" alt="" width="450" height="300" />
-    <p>プレゼント選びで<br>お困りの方へ</p>
+    <!-- <p>プレゼント選びで<br>お困りの方へ</p> -->
   </div>
 </div>
 
 <div id="form">
-  <div class="formInner">
-    <%= render :partial => "topForm" %>
-  </div>
+  <% if request.from_smartphone? %>
+    <div id="formInnerMobile">
+      <%= render :partial => "topFormMobile" %>
+    </div>
+  <% else %>
+    <div id="formInner">
+      <%= render :partial => "topForm" %>
+    </div>
+  <% end %>
 </div>
