@@ -6,10 +6,7 @@ class Shop < ActiveRecord::Base
 
   def filter_category
     @shop_ids = []
-    @conditions_categorys.each do |category|
-      @hit_shops = Shop.where("category like ?", "%#{category}%")
-      matching_shops_ids(category)
-    end
+    set_shop_ids
     @shop_ids.uniq!
   end
 
@@ -60,6 +57,18 @@ class Shop < ActiveRecord::Base
       shop_category.map{ |str|
         @shop_ids << shop.id if str == category
       }
+    end
+  end
+
+  def set_shop_ids
+    if @conditions_categorys.nil?
+      @conditions_categorys = ["未選択"]
+      Shop.all.map{|shop| @shop_ids << shop.id}
+    else
+      @conditions_categorys.each do |category|
+        @hit_shops = Shop.where("category like ?", "%#{category}%")
+        matching_shops_ids(category)
+      end
     end
   end
 end
