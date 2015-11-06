@@ -103,6 +103,228 @@ header {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
+#main {
+  width: 100%;
+
+  background-color: #FFFAEC;
+  overflow: hidden;
+}
+
+#searchConditions h4 {
+  background-color: #FEBC82;
+  color: white;
+  font-size: 25px;
+  padding-left: 5%;
+}
+
+#map {
+  width: 100%;
+  height: 250px;
+  margin: 25px 0;
+	overflow: hidden;
+}
+
+#map_canvas {
+  width: 96%;
+	height: 250px;
+	margin: 0 2%;
+}
+
+#shopList li {
+  width: 96%;
+
+  margin: 0 2% 10px;
+  background-color: white;
+  border: solid 1px #E0E0E0;
+  border-radius: 6px;
+  list-style: none;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 667px) {
+  #shop img {
+    width: 320px;
+    height: 200px;
+    padding: 15px;
+    float: left;
+  }
+
+  #shopName {
+    width: calc(100% - 350px);
+    height: calc(100% - 45px);
+
+    padding-top: 45px;
+
+    float: right;
+    overflow: hidden;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #shop img {
+    width: 320px;
+    height: 200px;
+    padding: 0 calc((100% - 320px)/2);
+    float: none;
+  }
+
+  #shopName {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 0;
+    float: none;
+    overflow: none;
+  }
+
+  span {
+    display: inline;
+  }
+}
+
+#shop h2, #shopInner h1 {
+  color: #f99868;
+}
+
+table {
+  width: 96%;
+  height: 150px;
+
+  margin: 20px 2%;
+
+  border: collapse;
+}
+
+td:first-child {
+  width: 80px;
+  background-color: #d4d4d4;
+}
+
+td {
+  border: solid 1px;
+  padding: 0.5em;
+}
+
+#shopInfo img {
+  width: 320px;
+  height: 200px;
+  margin: 0 calc((100% - 320px)/2);
+}
+
+.abstract dl {
+  /*width: 900px;*/
+  width: 96%;
+  margin: 30px 2%;
+}
+
+.abstract dt {
+  background-color: #d4d4d4;
+  border: solid 1px black;
+  text-align: center;
+}
+
+.abstract dd {
+  border: solid 1px black;
+  border-top: 0;
+  padding: 10px;
+}
+
+#lbBg {
+	width: 100%;
+	height: 100%;
+
+  position: fixed;
+	top: 0;
+	left: 0;
+
+	background: #000;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+  z-index: 100;
+}
+
+#lb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 101;
+}
+
+#lbBody {
+	padding: 6px;
+  position: relative;
+	top: -6px;
+	left: -6px;
+
+	background: #fff;
+}
+
+#lbClose {
+	position: absolute;
+	top: -6px;
+	right: 6px;
+	z-index: 1;
+}
+
+#pageLink ul {
+  width: 96%;
+  margin: 30px 2%;
+
+  /*border-bottom: solid 4px #001349;*/
+  font-size: 0;
+}
+
+#pageLink li {
+  /*width: 46%;*/
+  width: calc(50% - 1px);
+  height: 80px;
+
+  border-bottom: solid 3px white;
+  display: inline-block;
+  font-size: 30px;
+  line-height: 80px;
+  text-align: center;
+}
+
+#pageLink li:first-child {
+  border-right: solid 1px white;
+}
+
+#pageLink li:last-child {
+  border-left: solid 1px white;
+}
+
+#pageLink a {
+  background: linear-gradient(#ffecb6, #ffcd5e);
+  border-radius: 4px;
+  color: #613d00;
+  display: block;
+}
+
+#shopInner h3 {
+  background-color: #FEBC82;
+  color: white;
+  font-size: 25px;
+  padding-left: 5%;
+}
+
+#access {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 25px;
+	overflow: hidden;
+}
+
+#access_canvas {
+  width: 96%;
+	height: 250px;
+	margin: 0 2%;
+}
+
 footer {
   width: 100%;
   height: 200px;

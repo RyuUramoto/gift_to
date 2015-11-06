@@ -122,20 +122,3 @@
   float: right;
   overflow: hidden;
 }
-
-/*@media screen and (max-width: 320px) {
-  #main {
-    margin: none;
-  }
-  #searchConditions {
-    width: 100%;
-    padding: none;
-  }
-
-  #searchConditions h4 {
-    background-color: #FEBC82;
-    color: white;
-    font-size: 130px;
-    padding-left: 5%;
-  }
-}*/

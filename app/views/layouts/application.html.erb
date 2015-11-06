@@ -7,6 +7,7 @@
   <% if request.from_smartphone? %>
     <%= stylesheet_link_tag 'normalize' %>
     <%= stylesheet_link_tag 'inside/mobile' %>
+    <%= stylesheet_link_tag 'inside/slider' %>
   <% else %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <% end %>

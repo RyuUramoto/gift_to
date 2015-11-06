@@ -1,0 +1,11 @@
+<div id="slider">
+  <div class="slideFrame">
+    <div class="slideSet">
+      <% @shop.item.all.each do |item| %>
+        <div class="slide"><img class="goodsImage" src=<%= item.image_path %> width="320" height="200" alt="商品の写真"></div>
+      <% end %>
+    </div>
+  </div>
+  <div class="prev"><a href="javascript: void(0);">前へ</a></div>
+  <div class="next"><a href="javascript: void(0);">次へ</a></div>
+</div>
