@@ -5,9 +5,6 @@
       <dt>ジャンル</dt>
       <dd>：<%= @shops.conditions_categorys.join(",") %></dd>
 
-      <dt>シチュエーション</dt>
-      <dd>：<%= @shops.conditions_situation unless @shops.conditions_situation == "false" %></dd>
-
       <dt>地域</dt>
       <dd>：<%= @shops.area %></dd>
     </dl>
@@ -17,7 +14,10 @@
     <div id="map_canvas"></div>
   </div>
 
+  <!-- <%= render :partial => "topForm" %> -->
+
   <div id="shopList">
+    <%= @found_shops.length %>件ヒット
     <div id="shopListInner">
       <ul>
         <% @found_shops.each do |shop| %>
