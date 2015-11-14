@@ -8,6 +8,7 @@ class ShopsController < ApplicationController
     conditions_filter
     @shops.filter_area
     @found_shops = @shops.set_matching_shops
+    @message = "条件に合うお店がありませんでした" if @found_shops.empty?
     @hash = @shops.get_markers(@found_shops)
   end
 
@@ -53,20 +54,15 @@ class ShopsController < ApplicationController
   end
 
   def check_conditions
-    begin
-      redirect_to(root_path) if params[:top].fetch(:situation) == "false" && !params[:top].include?(:category)
-    rescue
-      redirect_to(root_path)
-    end
+    redirect_to(root_path) if !params[:top].include?(:category)
   end
 
   def conditions_filter
     @shops.filter_category
-    @shops.filter_situation unless params[:top].has_value?("false")
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def shop_params
-    params.require(:shop).permit(:name, :image_path, :address, :tel, :abstract, :store_hours, :category, :situation)
+    params.require(:shop).permit(:name, :image_path, :address, :tel, :abstract, :store_hours, :category)
   end
 end

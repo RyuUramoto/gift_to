@@ -2,18 +2,12 @@ class Shop < ActiveRecord::Base
   has_many :item
   geocoded_by :address
   after_validation :geocode
-  attr_accessor :conditions_categorys, :conditions_situation, :area
+  attr_accessor :conditions_categorys, :area
 
   def filter_category
     @shop_ids = []
     set_shop_ids
     @shop_ids.uniq!
-  end
-
-  def filter_situation
-    hit_shops = Shop.where("situation like ?", "%#{@conditions_situation}%")
-    hit_shop_ids = hit_shops.map{|hit_shop| hit_shop.id}
-    @shop_ids = @shop_ids & hit_shop_ids
   end
 
   def filter_area
@@ -33,9 +27,8 @@ class Shop < ActiveRecord::Base
   end
 
   def set_params(params)
-    params.require(:top).permit(:category, :situation, :area)
+    params.require(:top).permit(:category, :area)
     @conditions_categorys = params[:top][:category]
-    @conditions_situation = params[:top][:situation]
     @area = params[:top][:area]
   end
 
