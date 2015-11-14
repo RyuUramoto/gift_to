@@ -91,7 +91,7 @@ INSERT INTO `items` (`image_path`, `shop_id`, `created_at`, `updated_at`) VALUES
 
 ("/assets/ring/ring10.jpg", 19, 20151104, 20151104),
 ("/assets/case/case5.jpeg", 19, 20151104, 20151104),
-("/assets/neckless/neckless.jpg", 19, 20151104, 20151104),
+("/assets/neckless/neckless7.jpg", 19, 20151104, 20151104),
 ("/assets/watch/watch10.jpg", 19, 20151104, 20151104),
 
 ("/assets/wallet/wallet4.jpg", 20, 20151104, 20151104),
@@ -141,7 +141,7 @@ INSERT INTO `items` (`image_path`, `shop_id`, `created_at`, `updated_at`) VALUES
 
 ("/assets/case/case3.jpg", 29, 20151104, 20151104),
 ("/assets/ring/ring18.jpg", 29, 20151104, 20151104),
-("/assets/neckless/neck5.jpg", 29, 20151104, 20151104),
+("/assets/neckless/neckless5.jpg", 29, 20151104, 20151104),
 ("/assets/passcase/passcase5.jpg", 29, 20151104, 20151104),
 
 ("/assets/passcase/passcase6.jpg", 30, 20151104, 20151104),
