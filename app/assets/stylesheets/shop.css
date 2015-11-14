@@ -210,6 +210,13 @@ h3 {
   border-left: 7px solid #666666;
 }
 
+.pageLink {
+  color: #1A0DAB;
+  float: right;
+  font-size: 17px;
+  /*text-decoration: underline;*/
+}
+
 #access {
   /*width: 880px;*/
   width: 100%;

@@ -1,3 +1,299 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  border-top: solid 10px #F9EC6F;
+  /*background-color: #FFFAEC;*/
+}
+
+.inner {
+  width: 75%;
+  margin: auto;
+}
+
+#formInner{
+  /*width: 980px;*/
+  width: 75%;
+
+  margin: 30px auto;
+
+  background-color: white;
+  border: solid 1px #E0E0E0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px 0 rgba(150,150,150,0.4);
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+
+  margin: auto;
+
+  background-color: white;
+  // border-bottom: solid 10px #F9EC6F;
+  box-shadow: 0 3px 3px 0 rgba(150,150,150,0.4);
+}
+
+/*header img {
+  float: left;
+}*/
+
+.logo {
+  margin-left: 12.5%;
+  float: left;
+}
+
+/*header ul {
+  float: right;
+  line-height: 100px;
+}
+
+header li {
+  float: left;
+  list-style: none;
+  margin: 0 15px;
+}
+
+header li a {
+  text-decoration: none;
+}*/
+
+#info {
+  /*width: 980px;*/
+  width: 100%;
+  height: 350px;
+
+  // margin: 4px auto 0;
+
+  // background: rgb(247, 247, 247);
+  // background-color: #F7EDEC;
+  background-color: #FFFAEC;
+  // background-image: image-url("info_image.png");
+  // background-repeat: no-repeat;
+  // border-bottom: solid 7px #885a00;
+}
+
+#info img {
+  width: 1280px;
+  height: 350px;
+  margin: 0 calc((100% - 1280px)/2);
+
+  box-shadow: 0 4px 4px 0 rgba(150,150,150,0.4);
+}
+
+/*#info p {
+  width: calc(100% - 450px);
+  color: #f251ad;
+  float: right;
+  font-family: "Hannotate SC";
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 90px;
+  text-align: center;
+  text-shadow:3px 3px 3px #fff;
+  position: relative;
+  top: 40px;
+}*/
+
+#form {
+  /*width: 1280px;*/
+  width: 100%;
+
+  background-color: #FFFAEC;
+  /*position: relative;*/
+  overflow: hidden;
+}
+
+#formInner dl {
+  /*width : 900px;*/
+  width: 95%;
+  height: auto;
+  margin: 50px auto;
+}
+
+#formInner dt {
+  font-size : 15px;
+  font-weight : bold;
+
+  margin-bottom : 10px;
+  padding-top : 2px;
+  padding-left : 8px;
+  padding-bottom : 2px;
+
+  border-bottom: 1px solid #666666;
+  border-left: 7px solid #666666;
+}
+
+#formInner dd {
+  margin-bottom : 45px;
+  padding-left : 30px;
+  padding-right : 15px;
+
+  font-size : 80%;
+  line-height : 1.8;
+  overflow: hidden;
+}
+
+#formInner li {
+  width: 98px;
+
+  margin-right: 20px;
+
+  float: left;
+  list-style: none;
+}
+
+.textField {
+  width: 300px;
+  height: 25px;
+}
+
+dd#area {
+  margin-bottom: 10px;
+}
+
+#areaWarning {
+  color: red;
+}
+
+.submitBtn {
+  width: 200px;
+  height: 50px;
+
+  margin: 30px auto;
+
+  background-color: #f90;
+  background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  transition-duration: .5s;
+  transition-property: background-color;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+}
+
+footer {
+  /*width: 1280px;*/
+  width: 100%;
+  height: 100px;
+
+  background-color: #454545;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 1280px) {
+  body, header, #info, #form, footer {
+    width: 1280px;
+  }
+}
+
+/*@media screen and (max-width: 320px) {
+  body {
+    border-top: solid 30px #F9EC6F;
+  }
+
+  header {
+    width: 100%;
+    height: 300px;
+  }
+
+  .logo {
+    width: 705px;
+    height: 300px;
+  }
+
+  #info {
+    width: 100%;
+    height: 600px;
+
+    border-bottom: none;
+  }
+
+  #form {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #formInnerMobile h1 {
+    background-color: #FEBC82;
+    color: white;
+    font-size: 130px;
+    padding-left: 5%;
+  }
+
+  #formInnerMobile ul {
+    width: 90%;
+    margin: 50px 5%;
+    overflow: hidden;
+  }
+
+  #formInnerMobile li {
+    width: 49%;
+
+    margin-right: 11px;
+
+    font-size: 80px;
+    float: left;
+    list-style: none;
+  }
+
+  .checkBox {
+    width: 60px;
+    height: 60px;
+  }
+
+  .situationPullDown {
+    width: 90%;
+    height: 150px;
+
+    font-size: 100px;
+    margin: 50px 5%;
+  }
+
+  .textField {
+    width: 100%;
+    height: 150px;
+
+    margin: 50px 0;
+
+    font-size: 100px;
+    line-height: 150px;
+  }
+
+  .submitBtn {
+    width: 90%;
+    height: 300px;
+
+    background-color: #f90;
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
+    border: none;
+    border-radius: 60px;
+    color: #fff;
+    font-size: 130px;
+    font-weight: bold;
+    margin: 0 5% 200px;
+    transition-duration: .5s;
+    transition-property: background-color;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  }
+
+  footer {
+    width: 100%;
+    height: 500px;
+
+    font-size: 100px;
+  }
+  span {
+    display: block;
+  }
+}*/

@@ -34,14 +34,14 @@
         </dl>
       </div>
 
-      <div id="pageLink">
+      <!-- <div id="pageLink">
         <ul>
           <li><a href="#goodsLink">商品画像</a></li>
           <li><a href="#accessLink">アクセス</a></li>
         </ul>
-      </div>
+      </div> -->
 
-      <h3 id="goodsLink">商品画像</h3>
+      <h3 id="goodsLink">商品画像<a href="#accessLink" class="pageLink">▼アクセスへ</a></h3>
       <% if request.from_smartphone? %>
         <%= javascript_include_tag 'slider' %>
         <%= render :partial => "goodsListMobile" %>
@@ -49,7 +49,7 @@
         <%= render :partial => "goodsList" %>
       <% end %>
 
-      <h3 id="accessLink">アクセス</h3>
+      <h3 id="accessLink">アクセス<a href="#goodsLink" class="pageLink">▲商品画像へ</a></h3>
       <div id="access">
         <div id="access_canvas"></div>
       </div>

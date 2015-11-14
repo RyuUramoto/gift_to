@@ -30,8 +30,25 @@ header {
 }
 
 #info img {
-  width: 225px;
-  height: 150px;
+  width: 150px;
+  height: 100px;
+
+  position: relative;
+  top: 20px;
+}
+
+#info p {
+  width: calc(100% - 150px);
+  color: #f251ad;
+  float: right;
+  font-family: "Hannotate SC";
+  font-size: 20px;
+  font-weight: bold;
+  /*line-height: 90px;*/
+  text-align: center;
+  text-shadow:3px 3px 3px #fff;
+  position: relative;
+  top: 40px;
 }
 
 #form {

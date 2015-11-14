@@ -26,7 +26,8 @@
   </dd>
 
   <dt><%= f.label "地域" %></dt>
-  <dd><li><%= f.text_field :area, :class => 'textField', :placeholder => "未入力なら現在地で検索"%></li></dd>
+  <dd id="area"><%= f.text_field :area, :class => 'textField', :placeholder => "地名を入力"%></dd>
+  <dd id="areaWarning">※未入力なら現在地で検索します</dd>
 </dl>
 <%= f.submit 'お店を検索', :class => 'submitBtn'%>
 <% end %>

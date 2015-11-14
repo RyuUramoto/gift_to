@@ -216,13 +216,13 @@ section {
 
 a:link {/* 未訪問のリンク */
   color: black;
-  text-decoration: none; /* 下線を消す */
+  text-decoration: none;
 }
 a:visited { /* 訪問済みのリンク */
   color: black;
-  text-decoration: none; /* 下線を消す */
+  text-decoration: none;
 }
 a:hover { /* カーソルが上にある時のリンク */
   color: black;
-  text-decoration: none; /* 下線を消す */
+  text-decoration: none;
 }
