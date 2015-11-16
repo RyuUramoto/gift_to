@@ -1,5 +1,6 @@
 class Shop < ActiveRecord::Base
   has_many :item
+  has_one :shop_detail
   geocoded_by :address
   after_validation :geocode
   attr_accessor :conditions_categorys, :area
@@ -27,7 +28,6 @@ class Shop < ActiveRecord::Base
   end
 
   def set_params(params)
-    params.require(:top).permit(:category, :area)
     @conditions_categorys = params[:top][:category]
     @area = params[:top][:area]
   end

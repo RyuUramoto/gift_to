@@ -11,12 +11,12 @@
 
           <tr>
             <td>TEL</td>
-            <td><%= @shop.tel %></td>
+            <td><%= @shop.shop_detail.tel %></td>
           </tr>
 
           <tr>
             <td>営業時間</td>
-            <td><%= @shop.store_hours %></td>
+            <td><%= @shop.shop_detail.store_hours %></td>
           </tr>
 
           <tr>
@@ -30,7 +30,7 @@
       <div class="abstract">
         <dl>
           <dt>概要</dt>
-          <dd><%= @shop.abstract %></dd>
+          <dd><%= @shop.shop_detail.abstract %></dd>
         </dl>
       </div>
 

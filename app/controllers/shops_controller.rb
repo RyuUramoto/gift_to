@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :update, :destroy]
+  before_action :permit_params, only: [:index]
   before_action :check_conditions, only: [:index]
   before_action :set_params, only: [:index]
   # GET /shops
@@ -62,7 +63,7 @@ class ShopsController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def shop_params
-    params.require(:shop).permit(:name, :image_path, :address, :tel, :abstract, :store_hours, :category)
+  def permit_params
+    params.require(:top).permit(:category, :area)
   end
 end
