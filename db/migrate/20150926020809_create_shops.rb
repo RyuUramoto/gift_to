@@ -6,9 +6,7 @@ class CreateShops < ActiveRecord::Migration
       t.string :address
       t.float :latitude
       t.float :longitude
-      t.string :tel
-      t.text :abstract
-      t.string :store_hours
+      t.string :characteristic
       t.string :category
       t.string :situation
 
