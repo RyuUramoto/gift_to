@@ -9,21 +9,9 @@
   overflow: hidden;
 }
 
-#searchConditions {
-  /*width: 980px;*/
-  width: 75%;
-  margin: auto;
-  padding: 20px 0;
-}
-
-#searchConditions h4 {
-  border-bottom: 1px solid #666666;
-  border-left: 7px solid #666666;
-}
-
 #searchConditions dt {
-  width: 144px;
-  margin-left: 30px;
+  width: 96%;
+  margin: auto;
 
   float: left;
 }
@@ -34,7 +22,7 @@
 
 #map {
 	/*width: 980px;*/
-  width: 75%;
+  width: 96%;
 	height: auto;
 
   margin: auto;
@@ -46,12 +34,12 @@
   /*width: 980px;*/
   width: 100%;
 	height: 400px;
-	margin: 20px auto;
+	margin: 0 auto 20px;
 }
 
 #shopList {
   /*width: 980px;*/
-  width: 75%;
+  width: 96%;
   height: auto;
 
   margin: auto;
@@ -121,4 +109,23 @@
 
   float: right;
   overflow: hidden;
+}
+
+.inner {
+  width: 90%;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+#side {
+  background-color: white;
+  float: left;  /* left,かけない,rigthどれでもいいかも*/
+  overflow: hidden; /* floatがかかってるとこはあったほうがいいかもIEのせい */
+  width: 20%;
+}
+
+#searchResult {
+  float: right;  /* left,かけない,rigthどれでもいいかも*/
+  overflow: hidden; /* floatがかかってるとこはあったほうがいいかもIEのせい */
+  width: 80%;
 }
