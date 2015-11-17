@@ -77,7 +77,7 @@ header {
 // }
 
 .formLabel {
-  width: 94%;
+  width: 90%;
 
   margin: 20px auto 10px;
   padding-top : 2px;
@@ -92,7 +92,7 @@ header {
 
 #categoryList {
   /*width : 900px;*/
-  width: 90%;
+  width: 86%;
   height: auto;
   margin: 20px auto;
 }
@@ -135,13 +135,17 @@ header {
 }
 
 #textField {
-  margin-left: 5%;
+  margin-left: 7%;
   margin-bottom: 10px;
 }
 
-#areaWarning {
-  margin-left: 5%;
+.areaWarning {
+  margin-left: 7%;
   color: red;
+}
+
+span.areaWarning {
+  margin-left: 2%;
 }
 
 .submitBtn {

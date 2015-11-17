@@ -117,15 +117,21 @@
   overflow: hidden;
 }
 
-#side {
+#research {
+  width: 20%;
+
   background-color: white;
   float: left;  /* left,かけない,rigthどれでもいいかも*/
   overflow: hidden; /* floatがかかってるとこはあったほうがいいかもIEのせい */
-  width: 20%;
+}
+
+#research .textField {
+  width: 90%;
 }
 
 #searchResult {
+  width: 80%;
+
   float: right;  /* left,かけない,rigthどれでもいいかも*/
   overflow: hidden; /* floatがかかってるとこはあったほうがいいかもIEのせい */
-  width: 80%;
 }

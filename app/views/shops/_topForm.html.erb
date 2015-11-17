@@ -1,6 +1,6 @@
 <%= form_for "top", :url => shops_path do |f| %>
-  <h2 class="formTitle">検索条件の入力</h2>
-  <h5 class="formLabel"><%= f.label "カテゴリー" %></h5>
+  <h4 class="formTitle">検索条件の入力</h4>
+  <h5 class="formLabel"><%= f.label "カテゴリー" %><span class="areaWarning">*必須</span></h5>
   <dl id="categoryList">
     <dt><%= f.label "ファッション" %></dt>
     <dd>
@@ -31,6 +31,6 @@
 
   <h5 class="formLabel"><%= f.label "地域" %></h5>
   <div id="textField"><%= f.text_field :area, :class => 'textField', :placeholder => "例）福岡市"%></div>
-  <p id="areaWarning">※未入力なら現在地から検索します</p>
+  <p class="areaWarning">※未入力なら現在地から検索します</p>
   <%= f.submit 'お店を再検索', :class => 'submitBtn'%>
 <% end %>
