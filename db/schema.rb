@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20151116055704) do
 
   create_table "items", force: :cascade do |t|
     t.string   "image_path", limit: 255
+    t.string   "material",   limit: 255
+    t.integer  "price",      limit: 4
     t.integer  "shop_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
