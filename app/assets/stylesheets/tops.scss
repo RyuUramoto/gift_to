@@ -23,7 +23,7 @@ header {
   float: left;
 }
 
-#info {
+nav {
   /*width: 980px;*/
   width: 100%;
   height: 350px;
@@ -33,7 +33,7 @@ header {
   background-color: #FFFAEC;
 }
 
-#info img {
+nav img {
   width: 1280px;
   height: 350px;
   margin: 0 calc((100% - 1280px)/2);
@@ -169,6 +169,10 @@ span.areaWarning {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
+.submitBtn:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .5));
+}
+
 footer {
   /*width: 1280px;*/
   width: 100%;
@@ -180,7 +184,7 @@ footer {
 }
 
 @media screen and (max-width: 1280px) {
-  body, header, #info, #form, footer {
+  body, header, nav, #form, footer {
     width: 1280px;
   }
 }
