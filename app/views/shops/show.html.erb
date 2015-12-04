@@ -20,8 +20,13 @@
           </tr>
 
           <tr>
-            <td>その他</td>
-            <td>ここにその他が入ります</td>
+            <td>休業日</td>
+            <td><%= @shop.shop_detail.holiday %></td>
+          </tr>
+
+          <tr>
+            <td>URL</td>
+            <td><a href=<%= @shop.shop_detail.web %>>公式HP</a></td>
           </tr>
           <img src = <%= @shop.image_path %>/>
         </table>
@@ -30,7 +35,7 @@
       <div class="abstract">
         <dl>
           <dt>概要</dt>
-          <dd><%= @shop.shop_detail.abstract %></dd>
+          <dd><%= simple_format(@shop.shop_detail.abstract) %></dd>
         </dl>
       </div>
 

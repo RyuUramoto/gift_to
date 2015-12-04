@@ -6,6 +6,7 @@ class CreateShopDetails < ActiveRecord::Migration
       t.string :holiday
       t.string :web
       t.text :abstract
+      t.string :station
       t.references :shop, index: true, foreign_key: true
 
       t.timestamps null: false
