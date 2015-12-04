@@ -52,7 +52,7 @@ nav img {
 
 #formInner{
   /*width: 980px;*/
-  width: 75%;
+  width: 90%;
 
   margin: 30px auto;
 
@@ -98,11 +98,12 @@ nav img {
 }
 
 #categoryList li {
-  width: 98px;
+  width: 198px;
 
   margin-right: 20px;
 
   float: left;
+  font-size: 15px;
   list-style: none;
 }
 
@@ -127,6 +128,11 @@ nav img {
   font-size : 80%;
   line-height : 1.8;
   overflow: hidden;
+}
+
+.checkBox {
+  width: 15px;
+  height: 15px;
 }
 
 .textField {
