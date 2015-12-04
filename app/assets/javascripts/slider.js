@@ -27,12 +27,12 @@ $(function(){
 	var thumbnail_mode = true;
 
 	// サムネイル画像のサイズを設定
-	var thumbnail_w = 80;
-	var thumbnail_h = 80;
+	var thumbnail_w = 60;
+	var thumbnail_h = 60;
 
 	// 機能が true だったらサムネイルを自動生成
 	if(thumbnail_mode){
-		$('#slider').after('<div id="thumbnail"><div class="thumbnailSet"></div></div>');
+		$('#slider').append('<div id="thumbnail"><div class="thumbnailSet"></div></div>');
 
 		// スライドの数と同様のサムネイルを生成
 		$('#slider .slide').each(function(){
@@ -40,7 +40,7 @@ $(function(){
 			var src = $(this).find('img').attr('src');
 
 			// 画像を生成する
-			$('.thumbnailSet').append('<a href="javascript: void(0);"><img src="'+src+'" width="'+thumbnail_w+'" height="'+thumbnail_h+'" alt="" /></a>');
+			$('.thumbnailSet').append('<a href="javascript: void(0);"><img class="thumbnail" src="'+src+'" width="'+thumbnail_w+'" height="'+thumbnail_h+'" alt="内装のサムネイル" /></a>');
 		});
 
 		$('.thumbnailSet a').click(function(){
