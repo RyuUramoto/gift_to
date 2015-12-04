@@ -1,5 +1,8 @@
 <ul id="goods">
   <% @shop.item.all.each do |item| %>
-    <li><a href=<%= item.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= item.image_path %> width="200" height="200" alt="商品の写真"></a></li>
+    <li><a href=<%= item.image_path %> target="_blank" class="lb"><img class="goodsImage" src=<%= item.image_path %> width="200" height="200" alt="商品の写真"></a>
+      <p><font size="-1">材質：<%= item.material %></font></p>
+      <p><font size="-1">¥<%= item.price %></font></p>
+    </li>
   <% end %>
 </ul>

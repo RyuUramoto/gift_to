@@ -25,8 +25,8 @@
           </tr>
 
           <tr>
-            <td>WEB</td>
-            <td><a href=""><%= @shop.shop_detail.web %></a></td>
+            <td>URL</td>
+            <td><a href=<%= @shop.shop_detail.web %>>公式HP</a></td>
           </tr>
           <img src = <%= @shop.image_path %>/>
         </table>
@@ -35,9 +35,16 @@
       <div class="abstract">
         <dl>
           <dt>概要</dt>
-          <dd><%= @shop.shop_detail.abstract %></dd>
+          <dd><%= simple_format(@shop.shop_detail.abstract) %></dd>
         </dl>
       </div>
+
+      <!-- <div id="pageLink">
+        <ul>
+          <li><a href="#goodsLink">商品画像</a></li>
+          <li><a href="#accessLink">アクセス</a></li>
+        </ul>
+      </div> -->
 
       <h3 id="goodsLink">商品画像<a href="#accessLink" class="pageLink">▼アクセスへ</a></h3>
       <% if request.from_smartphone? %>

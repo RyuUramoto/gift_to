@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151116055704) do
     t.string   "holiday",     limit: 255
     t.string   "web",         limit: 255
     t.text     "abstract",    limit: 65535
+    t.string   "station",     limit: 255
     t.integer  "shop_id",     limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
