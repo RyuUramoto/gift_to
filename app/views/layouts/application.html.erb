@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width; initial-scale=1.0" />
   <title>GiftTo</title>
+  <%= favicon_link_tag '/assets/favicon.ico' %>
   <% if request.from_smartphone? %>
     <%= stylesheet_link_tag 'normalize' %>
     <%= stylesheet_link_tag 'inside/mobile' %>
-    <%= stylesheet_link_tag 'inside/slider' %>
+    <%= stylesheet_link_tag 'inside/sliderMobile' %>
   <% else %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <% end %>
@@ -18,7 +19,7 @@
 </head>
 <body>
   <header>
-      <%= link_to image_tag("logo.png", class: 'logo', alt: 'ロゴ', width: '221', height:'94'), root_path %>
+      <%= link_to image_tag("logo.png", class: 'logo', alt: 'ロゴ', width: '222', height:'95'), root_path %>
       <!-- <ul>
         <li><a href="">使い方</a></li>
         <li><a href="">利用規約</a></li>

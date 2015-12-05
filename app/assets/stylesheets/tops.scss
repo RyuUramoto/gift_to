@@ -23,7 +23,7 @@ header {
   float: left;
 }
 
-#info {
+nav {
   /*width: 980px;*/
   width: 100%;
   height: 350px;
@@ -33,7 +33,7 @@ header {
   background-color: #FFFAEC;
 }
 
-#info img {
+nav img {
   width: 1280px;
   height: 350px;
   margin: 0 calc((100% - 1280px)/2);
@@ -52,7 +52,7 @@ header {
 
 #formInner{
   /*width: 980px;*/
-  width: 75%;
+  width: 90%;
 
   margin: 30px auto;
 
@@ -98,11 +98,12 @@ header {
 }
 
 #categoryList li {
-  width: 98px;
+  width: 198px;
 
   margin-right: 20px;
 
   float: left;
+  font-size: 15px;
   list-style: none;
 }
 
@@ -127,6 +128,11 @@ header {
   font-size : 80%;
   line-height : 1.8;
   overflow: hidden;
+}
+
+.checkBox {
+  width: 15px;
+  height: 15px;
 }
 
 .textField {
@@ -169,6 +175,10 @@ span.areaWarning {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
 }
 
+.submitBtn:hover {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .5));
+}
+
 footer {
   /*width: 1280px;*/
   width: 100%;
@@ -180,7 +190,7 @@ footer {
 }
 
 @media screen and (max-width: 1280px) {
-  body, header, #info, #form, footer {
+  body, header, nav, #form, footer {
     width: 1280px;
   }
 }

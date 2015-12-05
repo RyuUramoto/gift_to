@@ -1,5 +1,5 @@
 #shopDetail{
-
+  width: 90%;
   margin: 24px auto 20px;
 
   background-color: white;
@@ -20,7 +20,8 @@
 table {
   /*width: 300px;*/
   width: 40%;
-  height: 200px;
+  height: 280px;
+  overflow: hidden;
 
   margin-top: 20px;
 
@@ -35,12 +36,6 @@ td:first-child {
 td {
   border: solid 1px;
   padding: 0.5em;
-}
-
-#shopInfo img {
-  width: 400px;
-  height: 200px;
-  float: right;
 }
 
 #goods {
@@ -119,7 +114,7 @@ td {
 	z-index: 1;
 }
 
-#pageLink ul {
+/*#pageLink ul {
   width: 100%;
   margin: 30px auto;
 
@@ -128,7 +123,6 @@ td {
 }
 
 #pageLink li {
-  /*width: 46%;*/
   width: calc(50% - 1px);
   height: 80px;
 
@@ -157,7 +151,7 @@ td {
 #pageLink a:hover {
   background: linear-gradient(#ffcd5e, #ffecb6);
   display: block;
-}
+}*/
 
 h3 {
   border-bottom: 1px solid #666666;
@@ -194,21 +188,23 @@ h3 {
   }
 
   #goods li {
-    width: 260px;
-    height: 280px;
-    margin: 20px;
+    width: 200px;
+    /*height: 280px;*/
+    margin: 50px;
+    overflow: hidden;
   }
 }
 
 @media screen and (max-width: 1280px) {
   #shopDetail {
-    width: 980px;
+    width: 1152px;
     margin: 50px auto;
   }
 
   #goods li {
-    width: 195px;
-    height: 280px;
-    margin: 15px;
+    width: 200px;
+    /*height: 250px;*/
+    margin: 34px;
+    overflow: hidden;
   }
 }

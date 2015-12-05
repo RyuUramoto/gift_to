@@ -20,35 +20,33 @@ header {
   float: left;
 }
 
-#info {
+nav {
   width: 100%;
-  height: 150px;
+  height: 100px;
 
-  margin: 4px auto 0;
+  /*margin: 4px auto 0;*/
 
   background: rgb(247, 247, 247);
 }
 
-#info img {
-  width: 150px;
+nav img {
+  width: 320px;
   height: 100px;
 
-  position: relative;
-  top: 20px;
+  /*position: relative;
+  top: 20px;*/
+  /*margin: 0 calc((100% - 320px)/2);*/
 }
 
-#info p {
-  width: calc(100% - 150px);
-  color: #f251ad;
-  float: right;
-  font-family: "Hannotate SC";
-  font-size: 20px;
-  font-weight: bold;
-  /*line-height: 90px;*/
-  text-align: center;
-  text-shadow:3px 3px 3px #fff;
-  position: relative;
-  top: 40px;
+@media screen and (min-width: 480px) {
+  nav {
+    height: 137px;
+  }
+
+  nav img {
+    width: 100%;
+    height: 137px;
+  }
 }
 
 #form {
@@ -58,37 +56,72 @@ header {
   overflow: hidden;
 }
 
-#formInnerMobile h1 {
-  background-color: #FEBC82;
-  color: white;
-  font-size: 35px;
-  padding-left: 5%;
+#form .formTitle {
+  padding-left: 2%;
+  /*background-color: #fff975;*/
+  background: linear-gradient(#fff975, #FED972);
+  font-size: 40px;
 }
 
-#formInnerMobile ul {
+.formLabel {
   width: 90%;
-  margin: 20px 5%;
-  overflow: hidden;
+
+  margin: 20px auto 10px;
+  padding-top : 2px;
+  padding-left : 8px;
+  padding-bottom : 2px;
+
+  font-size : 30px;
+  font-weight : bold;
+  border-bottom: 1px solid #666666;
+  border-left: 7px solid #666666;
 }
 
-#formInnerMobile li {
-  width: 48%;
+#categoryList {
+  width: 86%;
+  height: auto;
+  margin: 20px auto;
+}
 
-  margin-right: 5px;
-  margin-top: 5px;
+#categoryList li {
+  width: 270px;
+
+  margin-right: 20px;
   margin-bottom: 5px;
 
-  font-size: 20px;
   float: left;
   list-style: none;
 }
 
-.situationPullDown {
-  width: 90%;
-  height: 50px;
+#categoryList dt {
+  margin-bottom : 10px;
+  padding-top : 2px;
+  padding-left : 8px;
+  padding-bottom : 2px;
 
-  font-size: 20px;
-  margin: 20px 5%;
+  border-bottom: 1px solid #666666;
+  border-left: none;
+  font-size : 25px;
+  font-weight : bold;
+}
+
+#categoryList dd {
+  margin-bottom : 20px;
+  padding-left : 20px;
+  padding-right : 15px;
+
+  font-size : 23px;
+  line-height : 1.8;
+  overflow: hidden;
+}
+
+.areaWarning {
+  margin-left: 7%;
+  color: red;
+}
+
+span.areaWarning {
+  margin-left: 2%;
 }
 
 .textField {
@@ -96,6 +129,7 @@ header {
   height: 50px;
 
   margin: 20px;
+  margin-bottom: 0;
 
   font-size: 20px;
   line-height: 50px;
@@ -112,7 +146,7 @@ header {
   color: #fff;
   font-size: 30px;
   font-weight: bold;
-  margin: 0 2% 60px;
+  margin: 40px 2% 60px;
   transition-duration: .5s;
   transition-property: background-color;
   text-align: center;
@@ -127,11 +161,49 @@ header {
   overflow: hidden;
 }
 
-#searchConditions h4 {
-  background-color: #FEBC82;
-  color: white;
+#research .formTitle {
+  background: linear-gradient(#fff975, #FED972);
   font-size: 25px;
   padding-left: 5%;
+}
+
+.unit > .researchFormMobile {
+  display: none;
+}
+
+.formTitle span {
+  /*background: url("/assets/open.png") no-repeat 210px center;
+  background-size: 25px 25px;*/
+  display: block;
+  position: relative;
+  transition: 100ms ease;
+}
+
+.formTitle span:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 210px;
+  height: 0;
+  width: 0;
+  border: 12px solid transparent;
+  border-top: 18px solid black;
+}
+
+.formTitle span.active:after {
+  /*background: url("/assets/close.png") no-repeat 210px center;
+  background-size: 25px 25px;*/
+  display: block;
+  transition: 100ms ease;
+
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 210px;
+  height: 0;
+  width: 0;
+  border: 12px solid transparent;
+  border-bottom: 18px solid black;
 }
 
 #map {
@@ -145,6 +217,27 @@ header {
   width: 96%;
 	height: 250px;
 	margin: 0 2%;
+}
+
+#mapLink {
+  width: 60px;
+  height: 60px;
+
+  background-color: #f99868;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 40px;
+  left: 250px;
+}
+
+#mapLink a {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  position: relative;
+  top: 5px;
+  left: 8px;
 }
 
 #shopList li {
