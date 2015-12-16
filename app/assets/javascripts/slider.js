@@ -40,8 +40,17 @@ $(function(){
 			var src = $(this).find('img').attr('src');
 
 			// 画像を生成する
-			$('.thumbnailSet').append('<a href="javascript: void(0);"><img class="thumbnail" src="'+src+'" width="'+thumbnail_w+'" height="'+thumbnail_h+'" alt="内装のサムネイル" /></a>');
+			$('.thumbnailSet').append('<li><a href="javascript: void(0);"><img class="thumbnail" src="'+src+'" width="'+thumbnail_w+'" height="'+thumbnail_h+'" alt="内装のサムネイル" /></a></li>');
 		});
+
+		//サムネイル領域の調整
+		var thumbnail_count = $('.thumbnailSet .thumbnail').length;
+		var thumbnail_area_width = (thumbnail_w * thumbnail_count) + (40 * thumbnail_count);
+		if(thumbnail_area_width > slide_width) {
+			thumbnail_area_width = slide_width;
+		}
+		thumbnail_area_width = thumbnail_area_width.toString(10) + "px";
+		document.getElementById("thumbnail").style.width = thumbnail_area_width;
 
 		$('.thumbnailSet a').click(function(){
 			// オートスライドを一時停止
@@ -51,18 +60,6 @@ $(function(){
 			current = $('.thumbnailSet a').index(this) + 1;
 			setting();
 		});
-	}
-
-	// オートスライドの処理
-	var autoTimer;
-	var startAuto = function(){
-		autoTimer = setInterval(function(){
-			current++;
-			if(current > slide_count){
-				current = 1;
-			}
-			setting();
-		}, auto_interval+animate_time);
 	}
 
 	var stopIntereval = 1;
@@ -79,48 +76,7 @@ $(function(){
 		}
 	}
 
-	// 機能が true だったらオートスライドの実行
-	if(auto_mode){
-		// オートスライドの実行
-		startAuto();
-
-		// ユーザーが「前へ」「次へ」ボタンを押したらタイマー停止
-		$('#slider .prev a, #slider .next a').click(function(){
-			stopAuto();
-		});
-	}
-
-	// 次の画像まで移動
-	$('#slider .next a').click(function(){
-		current++;
-		setting();
-		return false;
-	});
-
-	// 前の画像まで移動
-	$('#slider .prev a').click(function(){
-		current--;
-		setting();
-		return false;
-	});
-
 	var setting = function(mode){
-		// 最初の画像になったら「前へ」ボタン非表示
-		if(current <= 1){
-			$('#slider .prev').hide();
-			current = 1;
-		}else{
-			$('#slider .prev').show();
-		}
-
-		// 最後の画像になったら「次へ」ボタン非表示
-		if(current >= slide_count){
-			$('#slider .next').hide();
-			current = slide_count;
-		}else{
-			$('#slider .next').show();
-		}
-
 		// ロード時の実行とクリックイベントで処理を振り分け
 		if(mode == 'onload'){
 			$('#slider .slideFrame .slideSet').css({
