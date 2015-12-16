@@ -8,7 +8,9 @@
   <% if request.from_smartphone? %>
     <%= stylesheet_link_tag 'normalize' %>
     <%= stylesheet_link_tag 'inside/mobile' %>
-    <%= stylesheet_link_tag 'inside/sliderMobile' %>
+    <%= stylesheet_link_tag 'inside/flickity.min' %>
+    <!-- <%= stylesheet_link_tag 'inside/sliderMobile' %>
+    <%= stylesheet_link_tag 'inside/sliderMobileInterior' %> -->
   <% else %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <% end %>
@@ -18,18 +20,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-      <%= link_to image_tag("logo.png", class: 'logo', alt: 'ロゴ', width: '222', height:'95'), root_path %>
-      <!-- <ul>
-        <li><a href="">使い方</a></li>
-        <li><a href="">利用規約</a></li>
-      </ul> -->
+  <header name="top">
+    <%= link_to image_tag("logo.png", class: 'logo', alt: 'ロゴ', width: '222', height:'95'), root_path %>
   </header>
 
   <%= yield %>
 
   <footer>
-    <small><span>Copyright &copy; Chevalier.pop</span> All right Reserved.</small>
+    <% if !request.from_smartphone? %>
+      <a href="#top">▲ページTOPへ</a>
+    <% end %>
+    <small>北九州市立大学<br>Chevalier.pop</small>
   </footer>
 
 </body>

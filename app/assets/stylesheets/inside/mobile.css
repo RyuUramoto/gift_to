@@ -10,6 +10,7 @@ header {
   margin: auto;
 
   background-color: white;
+  border-bottom: solid 0.5px #bebebe;
   box-shadow: 0 3px 3px 0 rgba(150,150,150,0.4);
 }
 
@@ -122,6 +123,7 @@ nav img {
 
 span.areaWarning {
   margin-left: 2%;
+  display: inline;
 }
 
 .textField {
@@ -161,7 +163,7 @@ span.areaWarning {
   overflow: hidden;
 }
 
-#research .formTitle {
+#research .formTitle, #shopInner h3 {
   background: linear-gradient(#fff975, #FED972);
   font-size: 25px;
   padding-left: 5%;
@@ -226,8 +228,8 @@ span.areaWarning {
   background-color: #f99868;
   border-radius: 30px;
   position: fixed;
-  bottom: 40px;
-  left: 250px;
+  bottom: 2%;
+  left: calc(98% - 60px);
 }
 
 #mapLink a {
@@ -343,81 +345,8 @@ td {
   padding: 10px;
 }
 
-#lbBg {
-	width: 100%;
-	height: 100%;
-
-  position: fixed;
-	top: 0;
-	left: 0;
-
-	background: #000;
-	opacity: 0.7;
-	filter: alpha(opacity=70);
-  z-index: 100;
-}
-
-#lb {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 101;
-}
-
-#lbBody {
-	padding: 6px;
-  position: relative;
-	top: -6px;
-	left: -6px;
-
-	background: #fff;
-}
-
-#lbClose {
-	position: absolute;
-	top: -6px;
-	right: 6px;
-	z-index: 1;
-}
-
-#pageLink ul {
-  width: 96%;
-  margin: 30px 2%;
-
-  /*border-bottom: solid 4px #001349;*/
-  font-size: 0;
-}
-
-#pageLink li {
-  /*width: 46%;*/
-  width: calc(50% - 1px);
-  height: 80px;
-
-  border-bottom: solid 3px white;
-  display: inline-block;
-  font-size: 30px;
-  line-height: 80px;
-  text-align: center;
-}
-
-#pageLink li:first-child {
-  border-right: solid 1px white;
-}
-
-#pageLink li:last-child {
-  border-left: solid 1px white;
-}
-
-#pageLink a {
-  background: linear-gradient(#ffecb6, #ffcd5e);
-  border-radius: 4px;
-  color: #613d00;
-  display: block;
-}
-
-#shopInner h3 {
-  background-color: #FEBC82;
-  color: white;
+#goodsLink, #accessLink {
+  background: linear-gradient(#fff975, #FED972);
   font-size: 25px;
   padding-left: 5%;
 }
@@ -435,9 +364,18 @@ td {
 	margin: 0 2%;
 }
 
+footer a {
+  position: relative;
+  bottom: 35px;
+  right: 2%;
+
+  font-size: 70%;
+  float: right;
+}
+
 footer {
   width: 100%;
-  height: 200px;
+  height: 150px;
 
   background-color: #454545;
   color: white;
