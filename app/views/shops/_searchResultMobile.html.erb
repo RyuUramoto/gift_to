@@ -24,7 +24,7 @@
             <li>
               <div id="shop">
                 <%= link_to shop_path(shop.id) do %>
-                  <img src = <%= shop.image_path %> alt="お店の画像"/>
+                  <img src = <%= Shop.get_shop_pictures_path(shop)[0] %> alt="お店の画像"/>
                   <div id="shopName">
                     <h2><%= shop.name %></h2>
                     <p><span>住所：</span><%= shop.address %></p>
