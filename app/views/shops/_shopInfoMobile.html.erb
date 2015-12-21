@@ -43,7 +43,7 @@
     </div> -->
     <div class="main-gallery">
       <% Shop.get_shop_pictures_path(@shop).each do |image| %>
-        <div class="gallery-cell"><img src=<%= @shop.image_path %> width="320" height="200" alt="お店の内装"></div>
+        <div class="gallery-cell"><img src=<%= image %> width="320" height="200" alt="お店の内装"></div>
       <% end %>
     </div>
 
