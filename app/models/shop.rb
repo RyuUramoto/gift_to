@@ -42,6 +42,18 @@ class Shop < ActiveRecord::Base
     return hash
   end
 
+  def self.get_shop_pictures_path(obj)
+    path = obj.image_path + "/" + "*"
+    shop_images = []
+    dirs = Dir.glob("**/"+path)
+    dirs.each do |d|
+      d.slice!("app")
+      d.slice!("images/")
+      shop_images << d
+    end
+    return shop_images
+  end
+
   private
   def matching_shops_ids(category)
     @hit_shops.each do |shop|
