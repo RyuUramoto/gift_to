@@ -1,5 +1,9 @@
 <nav>
-  <img src="assets/info_image" alt="" />
+  <% if request.from_smartphone? %>
+    <img src="assets/info_image_mobile" alt="買いたいものから，いろんな場所から，現在地から，ステキなお店がきっと見つかる" />
+  <% else %>
+    <img src="assets/info_image" alt="買いたいものから，いろんな場所から，現在地から，ステキなお店がきっと見つかる" />
+  <% end %>
 </nav>
 
 <div id="form">

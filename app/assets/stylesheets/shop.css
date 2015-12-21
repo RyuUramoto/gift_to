@@ -38,6 +38,19 @@ td {
   padding: 0.5em;
 }
 
+a.shopURL:link {/* 未訪問のリンク */
+  color: #0000E7;
+  text-decoration: underline;
+}
+a.shopURL:visited { /* 訪問済みのリンク */
+  color: #6C006E;
+  text-decoration: underline;
+}
+a.shopURL:hover { /* カーソルが上にある時のリンク */
+  color: red;
+  text-decoration: underline;
+}
+
 #goods {
   /*width: 100%;*/
   margin: auto;
@@ -114,45 +127,6 @@ td {
 	z-index: 1;
 }
 
-/*#pageLink ul {
-  width: 100%;
-  margin: 30px auto;
-
-  border-bottom: solid 4px #001349;
-  font-size: 0;
-}
-
-#pageLink li {
-  width: calc(50% - 1px);
-  height: 80px;
-
-  border-bottom: solid 3px white;
-  display: inline-block;
-  font-size: 30px;
-  line-height: 80px;
-  text-align: center;
-}
-
-#pageLink li:first-child {
-  border-right: solid 1px white;
-}
-
-#pageLink li:last-child {
-  border-left: solid 1px white;
-}
-
-#pageLink a {
-  background: linear-gradient(#ffecb6, #ffcd5e);
-  border-radius: 8px;
-  color: #613d00;
-  display: block;
-}
-
-#pageLink a:hover {
-  background: linear-gradient(#ffcd5e, #ffecb6);
-  display: block;
-}*/
-
 h3 {
   border-bottom: 1px solid #666666;
   border-left: 7px solid #666666;
@@ -162,7 +136,6 @@ h3 {
   color: #1A0DAB;
   float: right;
   font-size: 17px;
-  /*text-decoration: underline;*/
 }
 
 #access {

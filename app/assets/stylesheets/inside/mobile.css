@@ -23,7 +23,7 @@ header {
 
 nav {
   width: 100%;
-  height: 100px;
+  height: 124px;
 
   /*margin: 4px auto 0;*/
 
@@ -32,7 +32,7 @@ nav {
 
 nav img {
   width: 320px;
-  height: 100px;
+  height: 124px;
 
   /*position: relative;
   top: 20px;*/
@@ -319,6 +319,19 @@ td:first-child {
 td {
   border: solid 1px;
   padding: 0.5em;
+}
+
+a.shopURL:link {/* 未訪問のリンク */
+  color: #0000E7;
+  text-decoration: underline;
+}
+a.shopURL:visited { /* 訪問済みのリンク */
+  color: #6C006E;
+  text-decoration: underline;
+}
+a.shopURL:hover { /* カーソルが上にある時のリンク */
+  color: red;
+  text-decoration: underline;
 }
 
 #shopInfo img {
