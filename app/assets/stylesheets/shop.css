@@ -1,5 +1,5 @@
 #shopDetail{
-  width: 90%;
+  width: 95%;
   margin: 24px auto 20px;
 
   background-color: white;
@@ -155,15 +155,16 @@ h3 {
   margin: 20px auto;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1281px) {
   #shopDetail {
-    width: 1280px;
+    /*width: 1280px;*/
+    width: 1512px;
   }
 
   #goods li {
     width: 200px;
-    /*height: 280px;*/
-    margin: 50px;
+    height: 290px;
+    margin: 34px 43px;
     overflow: hidden;
   }
 }
@@ -176,8 +177,8 @@ h3 {
 
   #goods li {
     width: 200px;
-    /*height: 250px;*/
-    margin: 34px;
+    height: 275px;
+    margin: 25px 34px;
     overflow: hidden;
   }
 }

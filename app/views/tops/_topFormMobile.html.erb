@@ -1,36 +1,26 @@
 <%= form_for "top", :url => shops_path do |f| %>
   <h2 class="formTitle">検索条件の入力</h2>
-  <h5 class="formLabel"><%= f.label "カテゴリー" %><span class="areaWarning">*必須</span></h5>
+  <h5 class="formLabel"><%= f.label "買いたいものを選択してください" %><span class="areaWarning">*必須</span></h5>
   <dl id="categoryList">
-    <dt><%= f.label "ファッション" %></dt>
+    <!-- <dt><%= f.label "ファッション" %></dt> -->
     <dd>
-      <li><%= f.check_box :category, {id: "top_check1" ,multiple: true}, "ネックレス", nil %><%= f.label 'check1', "ネックレス" %></li>
-      <li><%= f.check_box :category, {id: "top_check3" ,multiple: true}, "ブレスレット", nil %><%= f.label 'check3', "ブレスレット" %></li>
-      <li><%= f.check_box :category, {id: "top_check4" ,multiple: true}, "指輪", nil %><%= f.label 'check4', "指輪" %></li>
-      <li><%= f.check_box :category, {id: "top_check10" ,multiple: true}, "イヤリング", nil %><%= f.label 'check10', "イヤリング" %></li>
-      <li><%= f.check_box :category, {id: "top_check9" ,multiple: true}, "バッグ", nil %><%= f.label 'check9', "バッグ" %></li>
-      <li><%= f.check_box :category, {id: "top_check11" ,multiple: true}, "ポーチ", nil %><%= f.label 'check11', "ポーチ" %></li>
-    </dd>
-
-    <dt><%= f.label "雑貨" %></dt>
-    <dd>
-      <li><%= f.check_box :category, {id: "top_check2" ,multiple: true}, "財布", nil %><%= f.label 'check2', "財布" %></li>
-      <li><%= f.check_box :category, {id: "top_check5" ,multiple: true}, "キーケース", nil %><%= f.label 'check5', "キーケース" %></li>
-      <li><%= f.check_box :category, {id: "top_check14" ,multiple: true}, "スマホケース", nil %><%= f.label 'check14', "スマホケース" %></li>
-      <li><%= f.check_box :category, {id: "top_check7" ,multiple: true}, "定期入れ", nil %><%= f.label 'check7', "定期入れ" %></li>
-      <li><%= f.check_box :category, {id: "top_check8" ,multiple: true}, "名刺入れ", nil %><%= f.label 'check8', "名刺入れ" %></li>
-      <li><%= f.check_box :category, {id: "top_check12" ,multiple: true}, "ボールペン", nil %><%= f.label 'check12', "ボールペン" %></li>
-    </dd>
-
-    <dt><%= f.label "メンズ" %></dt>
-    <dd>
-      <li><%= f.check_box :category, {id: "top_check6" ,multiple: true}, "腕時計", nil %><%= f.label 'check6', "腕時計" %></li>
-      <li><%= f.check_box :category, {id: "top_check13" ,multiple: true}, "ネクタイ", nil %><%= f.label 'check13', "ネクタイ" %></li>
+      <li><%= f.check_box :category, {id: "top_check1", class: "checkBox", multiple: true}, "ネックレス", nil %><%= f.label 'check1', "ネックレス" %></li>
+      <li><%= f.check_box :category, {id: "top_check5", class: "checkBox", multiple: true}, "ペンダント", nil %><%= f.label 'check5', "ペンダント" %></li>
+      <li><%= f.check_box :category, {id: "top_check3", class: "checkBox", multiple: true}, "ブレスレット", nil %><%= f.label 'check3', "ブレスレット" %></li>
+      <li><%= f.check_box :category, {id: "top_check4", class: "checkBox", multiple: true}, "指輪", nil %><%= f.label 'check4', "指輪" %></li>
+      <li><%= f.check_box :category, {id: "top_check10", class: "checkBox", multiple: true}, "イヤリング", nil %><%= f.label 'check10', "イヤリング" %></li>
+      <li><%= f.check_box :category, {id: "top_check14", class: "checkBox", multiple: true}, "ピアス", nil %><%= f.label 'check14', "ピアス" %></li>
+      <li><%= f.check_box :category, {id: "top_check7", class: "checkBox", multiple: true}, "ブローチ", nil %><%= f.label 'check7', "ブローチ" %></li>
+      <li><%= f.check_box :category, {id: "top_check9", class: "checkBox", multiple: true}, "バッグ", nil %><%= f.label 'check9', "バッグ" %></li>
+      <li><%= f.check_box :category, {id: "top_check11", class: "checkBox", multiple: true}, "ポーチ", nil %><%= f.label 'check11', "ポーチ" %></li>
+      <li><%= f.check_box :category, {id: "top_check2", class: "checkBox", multiple: true}, "財布", nil %><%= f.label 'check2', "財布" %></li>
+      <li><%= f.check_box :category, {id: "top_check6", class: "checkBox", multiple: true}, "腕時計", nil %><%= f.label 'check6', "腕時計" %></li>
+      <li><%= f.check_box :category, {id: "top_check13", class: "checkBox", multiple: true}, "雑貨", nil %><%= f.label 'check13', "雑貨" %></li>
     </dd>
   </dl>
 
-  <h5 class="formLabel"><%= f.label "地域" %></h5>
+  <h5 class="formLabel"><%= f.label "地域を入力してください" %></h5>
   <div id="textField"><%= f.text_field :area, :class => 'textField', :placeholder => "例）福岡市"%></div>
-  <p class="areaWarning"><font size="+1">※未入力なら現在地から検索します</font></p>
+  <p class="areaWarning"><font size="+2">※未入力の場合，現在地から検索します</font></p>
   <%= f.submit 'お店を検索', :class => 'submitBtn'%>
 <% end %>

@@ -2,7 +2,7 @@
   <div class="inner">
     <section id="research">
       <div id="searchConditions">
-        <h4 class="formTitle">検索条件</h4>
+        <h2 class="formTitle">検索条件</h2>
         <dl>
           <dt>ジャンル</dt>
           <dd>：<%= @shops.conditions_categorys.join(",") %></dd>
@@ -23,7 +23,7 @@
         </div>
 
         <div id="shopList">
-          <%= @found_shops.length %>件ヒット
+          <h4><%= @found_shops.length %>件ヒット</h4>
           <div id="shopListInner">
             <ul>
               <% @found_shops.each do |shop| %>
@@ -33,8 +33,8 @@
                       <img src = <%= Shop.get_shop_pictures_path(shop)[0] %> alt="お店の画像"/>
                       <div id="shopName">
                         <h2><%= shop.name %></h2>
-                        <p><span>住所：</span><%= shop.address %></p>
-                        <%= shop.characteristic %>
+                        <p><span>住所：</span><%= shop.address %></p><br>
+                        <p class="characteristic"><%= shop.characteristic %></p>
                       </div>
                     <% end %>
                   </div>

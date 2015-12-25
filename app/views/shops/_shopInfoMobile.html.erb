@@ -23,7 +23,7 @@
 
     <tr>
       <td>URL</td>
-      <td><a href=<%= @shop.shop_detail.web %> target="_blank" class="shopURL">公式HP</a></td>
+      <td><a href=<%= @shop.shop_detail.web %> target="_blank" class="shopURL"><%= @shop.shop_detail.web %></a></td>
     </tr>
 
     <tr>
@@ -63,6 +63,7 @@
 
 <h3 id="accessLink">アクセス</h3>
 <div id="access">
+  <p>アクセス : <%= @shop.shop_detail.station %></p>
   <div id="access_canvas"></div>
 </div>
 

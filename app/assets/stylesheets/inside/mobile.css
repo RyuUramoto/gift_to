@@ -23,7 +23,7 @@ header {
 
 nav {
   width: 100%;
-  height: 124px;
+  /*height: 124px;*/
 
   /*margin: 4px auto 0;*/
 
@@ -31,8 +31,9 @@ nav {
 }
 
 nav img {
-  width: 320px;
-  height: 124px;
+  /*width: 320px;*/
+  width: 100%;
+  /*height: 124px;*/
 
   /*position: relative;
   top: 20px;*/
@@ -41,12 +42,14 @@ nav img {
 
 @media screen and (min-width: 480px) {
   nav {
-    height: 137px;
+    /*height: 137px;*/
+    overflow: hidden;
   }
 
   nav img {
     width: 100%;
-    height: 137px;
+    /*height: 137px;*/
+    overflow: hidden;
   }
 }
 
@@ -72,7 +75,7 @@ nav img {
   padding-left : 8px;
   padding-bottom : 2px;
 
-  font-size : 30px;
+  font-size : 27px;
   font-weight : bold;
   border-bottom: 1px solid #666666;
   border-left: 7px solid #666666;
@@ -111,9 +114,14 @@ nav img {
   padding-left : 20px;
   padding-right : 15px;
 
-  font-size : 23px;
+  font-size : 25px;
   line-height : 1.8;
   overflow: hidden;
+}
+
+.checkBox {
+  width: 20px;
+  height: 20px;
 }
 
 .areaWarning {
@@ -208,6 +216,14 @@ span.areaWarning {
   border-bottom: 18px solid black;
 }
 
+.characteristic {
+  padding: 5px;
+  /*background: #FFF9E6;*/
+  background: #F9EC6F;
+  /*background: rgba(249, 236, 111, 0.5);*/
+  overflow: hidden;
+}
+
 #map {
   width: 100%;
   height: 250px;
@@ -244,8 +260,9 @@ span.areaWarning {
 
 #shopList li {
   width: 96%;
+  margin: 0 2% 45px;
+  /*padding: 5px;*/
 
-  margin: 0 2% 10px;
   background-color: white;
   border: solid 1px #E0E0E0;
   border-radius: 6px;
@@ -255,19 +272,22 @@ span.areaWarning {
 
 @media screen and (max-width: 667px) {
   #shop img {
-    width: 320px;
-    height: 200px;
-    padding: 15px;
+    /*width: 320px;
+    height: 200px;*/
+    width: 270px;
+    height: 169px;
+    padding: 10px;
     float: left;
   }
 
   #shopName {
-    width: calc(100% - 350px);
-    height: calc(100% - 45px);
+    width: calc(100% - 290px - 5px);
+    height: calc(100% - 10px);
 
-    padding-top: 45px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 
-    float: right;
+    /*float: right;*/
     overflow: hidden;
   }
 

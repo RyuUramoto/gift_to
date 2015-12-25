@@ -17,7 +17,7 @@
     <h1><%= @message %></h1>
   <% else %>
     <div id="shopList">
-      <%= @found_shops.length %>件ヒット
+      <h4><%= @found_shops.length %>件ヒット</h4>
       <div id="shopListInner">
         <ul>
           <% @found_shops.each do |shop| %>
@@ -28,7 +28,7 @@
                   <div id="shopName">
                     <h2><%= shop.name %></h2>
                     <p><span>住所：</span><%= shop.address %></p>
-                    <%= shop.characteristic %>
+                    <p class="characteristic"><%= shop.characteristic %></p>
                   </div>
                 <% end %>
               </div>
